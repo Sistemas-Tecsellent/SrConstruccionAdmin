@@ -102,8 +102,8 @@ export 'vendedor_compras/vendedor_compras_widget.dart'
 export 'usuario/usuario_widget.dart' show UsuarioWidget;
 export 'usuario_historial/usuario_historial_widget.dart'
     show UsuarioHistorialWidget;
-export 'login/login_widget.dart' show LoginWidget;
 export 'usuario_pedidos/usuario_pedidos_widget.dart' show UsuarioPedidosWidget;
+export 'login/login_widget.dart' show LoginWidget;
 export 'editar_categoria/editar_categoria_widget.dart'
     show EditarCategoriaWidget;
 export 'coleccionesapp/coleccionesapp_widget.dart' show ColeccionesappWidget;
