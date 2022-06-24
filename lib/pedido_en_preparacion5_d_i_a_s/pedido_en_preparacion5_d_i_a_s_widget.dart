@@ -1717,7 +1717,7 @@ class _PedidoEnPreparacion5DIASWidgetState
                                                           ),
                                                           if ((rowOrdersForClientsRecord
                                                                   .parcelName) !=
-                                                              '\"\"')
+                                                              '')
                                                             Padding(
                                                               padding:
                                                                   EdgeInsetsDirectional
