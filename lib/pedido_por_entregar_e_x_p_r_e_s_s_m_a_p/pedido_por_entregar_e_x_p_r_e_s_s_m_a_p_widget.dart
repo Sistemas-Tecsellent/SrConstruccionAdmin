@@ -1101,8 +1101,12 @@ class _PedidoPorEntregarEXPRESSMAPWidgetState
                                                                       ),
                                                                       child: Image
                                                                           .network(
-                                                                        columnDeliverersRecord
-                                                                            .photoUrl,
+                                                                        valueOrDefault<
+                                                                            String>(
+                                                                          columnDeliverersRecord
+                                                                              .photoUrl,
+                                                                          'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/assets%2FAsset%20predeterminado.png?alt=media&token=7c92986b-dd75-4755-8169-58cbbc6bce94',
+                                                                        ),
                                                                         fit: BoxFit
                                                                             .fitWidth,
                                                                       ),

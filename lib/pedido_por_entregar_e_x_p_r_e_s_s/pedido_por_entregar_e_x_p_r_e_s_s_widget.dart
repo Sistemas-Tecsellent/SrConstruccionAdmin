@@ -1514,8 +1514,11 @@ class _PedidoPorEntregarEXPRESSWidgetState
                                                                         ),
                                                                         child: Image
                                                                             .network(
-                                                                          columnDeliverersRecord
-                                                                              .photoUrl,
+                                                                          valueOrDefault<
+                                                                              String>(
+                                                                            columnDeliverersRecord.photoUrl,
+                                                                            'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/assets%2FAsset%20predeterminado.png?alt=media&token=7c92986b-dd75-4755-8169-58cbbc6bce94',
+                                                                          ),
                                                                           fit: BoxFit
                                                                               .fitWidth,
                                                                         ),
@@ -2012,12 +2015,13 @@ class _PedidoPorEntregarEXPRESSWidgetState
                                                                                               child: Image.network(
                                                                                                 valueOrDefault<String>(
                                                                                                   rowStoresRecord.logo,
-                                                                                                  'https://picsum.photos/seed/603/600',
+                                                                                                  'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/assets%2FAsset%20predeterminado.png?alt=media&token=7c92986b-dd75-4755-8169-58cbbc6bce94',
                                                                                                 ),
                                                                                               ),
                                                                                             ),
                                                                                             Column(
                                                                                               mainAxisSize: MainAxisSize.max,
+                                                                                              crossAxisAlignment: CrossAxisAlignment.start,
                                                                                               children: [
                                                                                                 Padding(
                                                                                                   padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
@@ -2395,7 +2399,10 @@ class _PedidoPorEntregarEXPRESSWidgetState
                                                                                         shape: BoxShape.circle,
                                                                                       ),
                                                                                       child: Image.network(
-                                                                                        columnDeliverersRecord.photoUrl,
+                                                                                        valueOrDefault<String>(
+                                                                                          columnDeliverersRecord.photoUrl,
+                                                                                          'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/assets%2FAsset%20predeterminado.png?alt=media&token=7c92986b-dd75-4755-8169-58cbbc6bce94',
+                                                                                        ),
                                                                                         fit: BoxFit.fitWidth,
                                                                                       ),
                                                                                     ),
@@ -2730,7 +2737,10 @@ class _PedidoPorEntregarEXPRESSWidgetState
                                                                                         child: ClipRRect(
                                                                                           borderRadius: BorderRadius.circular(10),
                                                                                           child: Image.network(
-                                                                                            containerProductsRecord.mainImage,
+                                                                                            valueOrDefault<String>(
+                                                                                              containerProductsRecord.mainImage,
+                                                                                              'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/assets%2FAsset.png?alt=media&token=85f6129c-7ee9-4db8-87ae-2e1adc4e010a',
+                                                                                            ),
                                                                                             width: 100,
                                                                                             height: 100,
                                                                                             fit: BoxFit.cover,
@@ -2956,7 +2966,10 @@ class _PedidoPorEntregarEXPRESSWidgetState
                                               shape: BoxShape.circle,
                                             ),
                                             child: Image.network(
-                                              circleImageUsersRecord.photoUrl,
+                                              valueOrDefault<String>(
+                                                circleImageUsersRecord.photoUrl,
+                                                'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/assets%2FAsset%20predeterminado.png?alt=media&token=7c92986b-dd75-4755-8169-58cbbc6bce94',
+                                              ),
                                               fit: BoxFit.fitWidth,
                                             ),
                                           );

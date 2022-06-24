@@ -264,3 +264,26 @@ class MarkStoresOrdersAsDeliveredCall {
     );
   }
 }
+
+class IsUserAdminCall {
+  static Future<ApiCallResponse> call({
+    String userEmail = '',
+  }) {
+    return ApiManager.instance.makeApiCall(
+      callName: 'isUserAdmin',
+      apiUrl:
+          'https://us-central1-srconstruccion-d4663.cloudfunctions.net/isUserAdmin',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'userEmail': userEmail,
+      },
+      returnBody: true,
+    );
+  }
+
+  static dynamic response(dynamic response) => getJsonField(
+        response,
+        r'''$.response''',
+      );
+}
