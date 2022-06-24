@@ -35,6 +35,72 @@ abstract class DeliverersRecord
   String get transport;
 
   @nullable
+  String get isLicenseApproved;
+
+  @nullable
+  String get isVehicleCertificateApproved;
+
+  @nullable
+  String get isIDDocumentApproved;
+
+  @nullable
+  String get isProofOfResidencyApproved;
+
+  @nullable
+  String get license;
+
+  @nullable
+  String get idDocument;
+
+  @nullable
+  String get vehicleCertificate;
+
+  @nullable
+  String get proofOfResidency;
+
+  @nullable
+  String get licensePlate;
+
+  @nullable
+  String get brandModel;
+
+  @nullable
+  String get photo1;
+
+  @nullable
+  String get photo2;
+
+  @nullable
+  String get photo3;
+
+  @nullable
+  String get photo4;
+
+  @nullable
+  String get bankStatement;
+
+  @nullable
+  String get bankAccountHolder;
+
+  @nullable
+  String get bank;
+
+  @nullable
+  String get bankAccountNo;
+
+  @nullable
+  String get bankAccountClabe;
+
+  @nullable
+  String get bankAccountPhone;
+
+  @nullable
+  String get bankAccountEmail;
+
+  @nullable
+  String get phone;
+
+  @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference get reference;
 
@@ -45,7 +111,29 @@ abstract class DeliverersRecord
     ..photoUrl = ''
     ..isApproved = false
     ..associatedWith = ''
-    ..transport = '';
+    ..transport = ''
+    ..isLicenseApproved = ''
+    ..isVehicleCertificateApproved = ''
+    ..isIDDocumentApproved = ''
+    ..isProofOfResidencyApproved = ''
+    ..license = ''
+    ..idDocument = ''
+    ..vehicleCertificate = ''
+    ..proofOfResidency = ''
+    ..licensePlate = ''
+    ..brandModel = ''
+    ..photo1 = ''
+    ..photo2 = ''
+    ..photo3 = ''
+    ..photo4 = ''
+    ..bankStatement = ''
+    ..bankAccountHolder = ''
+    ..bank = ''
+    ..bankAccountNo = ''
+    ..bankAccountClabe = ''
+    ..bankAccountPhone = ''
+    ..bankAccountEmail = ''
+    ..phone = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('deliverers');
@@ -76,6 +164,28 @@ Map<String, dynamic> createDeliverersRecordData({
   bool isApproved,
   String associatedWith,
   String transport,
+  String isLicenseApproved,
+  String isVehicleCertificateApproved,
+  String isIDDocumentApproved,
+  String isProofOfResidencyApproved,
+  String license,
+  String idDocument,
+  String vehicleCertificate,
+  String proofOfResidency,
+  String licensePlate,
+  String brandModel,
+  String photo1,
+  String photo2,
+  String photo3,
+  String photo4,
+  String bankStatement,
+  String bankAccountHolder,
+  String bank,
+  String bankAccountNo,
+  String bankAccountClabe,
+  String bankAccountPhone,
+  String bankAccountEmail,
+  String phone,
 }) =>
     serializers.toFirestore(
         DeliverersRecord.serializer,
@@ -86,4 +196,26 @@ Map<String, dynamic> createDeliverersRecordData({
           ..photoUrl = photoUrl
           ..isApproved = isApproved
           ..associatedWith = associatedWith
-          ..transport = transport));
+          ..transport = transport
+          ..isLicenseApproved = isLicenseApproved
+          ..isVehicleCertificateApproved = isVehicleCertificateApproved
+          ..isIDDocumentApproved = isIDDocumentApproved
+          ..isProofOfResidencyApproved = isProofOfResidencyApproved
+          ..license = license
+          ..idDocument = idDocument
+          ..vehicleCertificate = vehicleCertificate
+          ..proofOfResidency = proofOfResidency
+          ..licensePlate = licensePlate
+          ..brandModel = brandModel
+          ..photo1 = photo1
+          ..photo2 = photo2
+          ..photo3 = photo3
+          ..photo4 = photo4
+          ..bankStatement = bankStatement
+          ..bankAccountHolder = bankAccountHolder
+          ..bank = bank
+          ..bankAccountNo = bankAccountNo
+          ..bankAccountClabe = bankAccountClabe
+          ..bankAccountPhone = bankAccountPhone
+          ..bankAccountEmail = bankAccountEmail
+          ..phone = phone));

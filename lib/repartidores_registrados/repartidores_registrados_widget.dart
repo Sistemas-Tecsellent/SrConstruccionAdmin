@@ -1234,7 +1234,7 @@ class _RepartidoresRegistradosWidgetState
                                                                 String>(
                                                               listViewDeliverersRecord
                                                                   .photoUrl,
-                                                              'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bWFsZSUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80',
+                                                              'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/assets%2FAsset%20predeterminado.png?alt=media&token=7c92986b-dd75-4755-8169-58cbbc6bce94',
                                                             ),
                                                             fit:
                                                                 BoxFit.fitWidth,

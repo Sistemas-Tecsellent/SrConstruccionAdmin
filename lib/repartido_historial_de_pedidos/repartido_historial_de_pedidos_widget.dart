@@ -801,7 +801,7 @@ class _RepartidoHistorialDePedidosWidgetState
                                                                 FlutterFlowExpandedImageView(
                                                               image:
                                                                   Image.network(
-                                                                'https://img.freepik.com/free-photo/happy-asia-delivery-woman-orange-uniform-holding-package-parcel-box-isolated-white-background-delivery-courier-shipping-service-concept_41350-1679.jpg?w=2000',
+                                                                'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/assets%2FAsset%20predeterminado.png?alt=media&token=7c92986b-dd75-4755-8169-58cbbc6bce94',
                                                                 fit: BoxFit
                                                                     .contain,
                                                               ),
@@ -830,7 +830,7 @@ class _RepartidoHistorialDePedidosWidgetState
                                                                 BoxShape.circle,
                                                           ),
                                                           child: Image.network(
-                                                            'https://img.freepik.com/free-photo/happy-asia-delivery-woman-orange-uniform-holding-package-parcel-box-isolated-white-background-delivery-courier-shipping-service-concept_41350-1679.jpg?w=2000',
+                                                            'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/assets%2FAsset%20predeterminado.png?alt=media&token=7c92986b-dd75-4755-8169-58cbbc6bce94',
                                                             fit: BoxFit
                                                                 .fitHeight,
                                                           ),

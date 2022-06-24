@@ -31,16 +31,16 @@ export 'vendedor_productos_marcas/vendedor_productos_marcas_widget.dart'
     show VendedorProductosMarcasWidget;
 export 'repartidores_registrados/repartidores_registrados_widget.dart'
     show RepartidoresRegistradosWidget;
+export 'repartidores_por_aprobar/repartidores_por_aprobar_widget.dart'
+    show RepartidoresPorAprobarWidget;
+export 'aprobar_repartidor/aprobar_repartidor_widget.dart'
+    show AprobarRepartidorWidget;
 export 'vendedordatosbancarios/vendedordatosbancarios_widget.dart'
     show VendedordatosbancariosWidget;
 export 'vendedor_documentos/vendedor_documentos_widget.dart'
     show VendedorDocumentosWidget;
 export 'editar_cupon/editar_cupon_widget.dart' show EditarCuponWidget;
 export 'repartidor/repartidor_widget.dart' show RepartidorWidget;
-export 'repartidores_por_aprobar/repartidores_por_aprobar_widget.dart'
-    show RepartidoresPorAprobarWidget;
-export 'aprobar_repartidor/aprobar_repartidor_widget.dart'
-    show AprobarRepartidorWidget;
 export 'repartido_historial_de_pedidos/repartido_historial_de_pedidos_widget.dart'
     show RepartidoHistorialDePedidosWidget;
 export 'repartidor_pagos/repartidor_pagos_widget.dart'

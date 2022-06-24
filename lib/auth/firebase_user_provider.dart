@@ -1,19 +1,19 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:rxdart/rxdart.dart';
 
-class PortalAdminFirebaseUser {
-  PortalAdminFirebaseUser(this.user);
+class SrConstruccionAdminFirebaseUser {
+  SrConstruccionAdminFirebaseUser(this.user);
   User user;
   bool get loggedIn => user != null;
 }
 
-PortalAdminFirebaseUser currentUser;
+SrConstruccionAdminFirebaseUser currentUser;
 bool get loggedIn => currentUser?.loggedIn ?? false;
-Stream<PortalAdminFirebaseUser> portalAdminFirebaseUserStream() => FirebaseAuth
-    .instance
-    .authStateChanges()
-    .debounce((user) => user == null && !loggedIn
-        ? TimerStream(true, const Duration(seconds: 1))
-        : Stream.value(user))
-    .map<PortalAdminFirebaseUser>(
-        (user) => currentUser = PortalAdminFirebaseUser(user));
+Stream<SrConstruccionAdminFirebaseUser>
+    srConstruccionAdminFirebaseUserStream() => FirebaseAuth.instance
+        .authStateChanges()
+        .debounce((user) => user == null && !loggedIn
+            ? TimerStream(true, const Duration(seconds: 1))
+            : Stream.value(user))
+        .map<SrConstruccionAdminFirebaseUser>(
+            (user) => currentUser = SrConstruccionAdminFirebaseUser(user));

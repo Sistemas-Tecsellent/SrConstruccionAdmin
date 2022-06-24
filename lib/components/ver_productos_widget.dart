@@ -118,7 +118,10 @@ class _VerProductosWidgetState extends State<VerProductosWidget> {
                                           borderRadius:
                                               BorderRadius.circular(100),
                                           child: Image.network(
-                                            rowStoresRecord.logo,
+                                            valueOrDefault<String>(
+                                              rowStoresRecord.logo,
+                                              'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/assets%2FAsset%20predeterminado.png?alt=media&token=7c92986b-dd75-4755-8169-58cbbc6bce94',
+                                            ),
                                             width: 100,
                                             height: 100,
                                             fit: BoxFit.cover,
@@ -403,8 +406,11 @@ class _VerProductosWidgetState extends State<VerProductosWidget> {
                                                           BorderRadius.circular(
                                                               10),
                                                       child: Image.network(
-                                                        containerProductsRecord
-                                                            .mainImage,
+                                                        valueOrDefault<String>(
+                                                          containerProductsRecord
+                                                              .mainImage,
+                                                          'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/assets%2FAsset.png?alt=media&token=85f6129c-7ee9-4db8-87ae-2e1adc4e010a',
+                                                        ),
                                                         width: 100,
                                                         height: 100,
                                                         fit: BoxFit.cover,
