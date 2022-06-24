@@ -1625,7 +1625,10 @@ class _PedidoEnPreparacion5DIASWidgetState
                                                                           ),
                                                                           child:
                                                                               Image.network(
-                                                                            columnDeliverersRecord.photoUrl,
+                                                                            valueOrDefault<String>(
+                                                                              columnDeliverersRecord.photoUrl,
+                                                                              'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/assets%2FAsset%20predeterminado.png?alt=media&token=7c92986b-dd75-4755-8169-58cbbc6bce94',
+                                                                            ),
                                                                             fit:
                                                                                 BoxFit.fitWidth,
                                                                           ),
@@ -2211,12 +2214,13 @@ class _PedidoEnPreparacion5DIASWidgetState
                                                                                                       child: Image.network(
                                                                                                         valueOrDefault<String>(
                                                                                                           rowStoresRecord.logo,
-                                                                                                          'https://picsum.photos/seed/603/600',
+                                                                                                          'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/assets%2FAsset%20predeterminado.png?alt=media&token=7c92986b-dd75-4755-8169-58cbbc6bce94',
                                                                                                         ),
                                                                                                       ),
                                                                                                     ),
                                                                                                     Column(
                                                                                                       mainAxisSize: MainAxisSize.max,
+                                                                                                      crossAxisAlignment: CrossAxisAlignment.start,
                                                                                                       children: [
                                                                                                         Padding(
                                                                                                           padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
@@ -2669,7 +2673,10 @@ class _PedidoEnPreparacion5DIASWidgetState
                                                                                 child: ClipRRect(
                                                                                   borderRadius: BorderRadius.circular(10),
                                                                                   child: Image.network(
-                                                                                    containerProductsRecord.mainImage,
+                                                                                    valueOrDefault<String>(
+                                                                                      containerProductsRecord.mainImage,
+                                                                                      'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/assets%2FAsset.png?alt=media&token=85f6129c-7ee9-4db8-87ae-2e1adc4e010a',
+                                                                                    ),
                                                                                     width: 100,
                                                                                     height: 100,
                                                                                     fit: BoxFit.cover,
@@ -3014,7 +3021,7 @@ class _PedidoEnPreparacion5DIASWidgetState
                                             child: Image.network(
                                               valueOrDefault<String>(
                                                 circleImageUsersRecord.photoUrl,
-                                                'https://images.unsplash.com/photo-1614283233556-f35b0c801ef1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8d29tYW4lMjBwcm9maWxlfGVufDB8fDB8fA%3D%3D&w=1000&q=80',
+                                                'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/assets%2FAsset%20predeterminado.png?alt=media&token=7c92986b-dd75-4755-8169-58cbbc6bce94',
                                               ),
                                               fit: BoxFit.fitWidth,
                                             ),

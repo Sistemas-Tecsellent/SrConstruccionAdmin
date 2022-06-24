@@ -1465,7 +1465,7 @@ class _PedidoPorEntregar5DIASWidgetState
                                                                               width: 20,
                                                                               height: 20,
                                                                               decoration: BoxDecoration(
-                                                                                color: Color(0xFFEEEEEE),
+                                                                                color: Color(0xFF78E947),
                                                                                 shape: BoxShape.circle,
                                                                               ),
                                                                             ),
@@ -1540,7 +1540,7 @@ class _PedidoPorEntregar5DIASWidgetState
                                                                                     'Recolectando Productos',
                                                                                     style: FlutterFlowTheme.of(context).bodyText1.override(
                                                                                           fontFamily: 'Montserrat',
-                                                                                          color: FlutterFlowTheme.of(context).primaryText,
+                                                                                          color: FlutterFlowTheme.of(context).lineColor,
                                                                                           fontSize: 12,
                                                                                         ),
                                                                                   ),
@@ -1562,7 +1562,7 @@ class _PedidoPorEntregar5DIASWidgetState
                                                                                     'En camino a tu dirección',
                                                                                     style: FlutterFlowTheme.of(context).bodyText1.override(
                                                                                           fontFamily: 'Montserrat',
-                                                                                          color: FlutterFlowTheme.of(context).lineColor,
+                                                                                          color: FlutterFlowTheme.of(context).primaryText,
                                                                                           fontSize: 12,
                                                                                         ),
                                                                                   ),
@@ -1729,8 +1729,11 @@ class _PedidoPorEntregar5DIASWidgetState
                                                                         ),
                                                                         child: Image
                                                                             .network(
-                                                                          columnDeliverersRecord
-                                                                              .photoUrl,
+                                                                          valueOrDefault<
+                                                                              String>(
+                                                                            columnDeliverersRecord.photoUrl,
+                                                                            'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/assets%2FAsset%20predeterminado.png?alt=media&token=7c92986b-dd75-4755-8169-58cbbc6bce94',
+                                                                          ),
                                                                           fit: BoxFit
                                                                               .fitWidth,
                                                                         ),
@@ -2328,12 +2331,13 @@ class _PedidoPorEntregar5DIASWidgetState
                                                                                                   child: Image.network(
                                                                                                     valueOrDefault<String>(
                                                                                                       rowStoresRecord.logo,
-                                                                                                      'https://picsum.photos/seed/603/600',
+                                                                                                      'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/assets%2FAsset%20predeterminado.png?alt=media&token=7c92986b-dd75-4755-8169-58cbbc6bce94',
                                                                                                     ),
                                                                                                   ),
                                                                                                 ),
                                                                                                 Column(
                                                                                                   mainAxisSize: MainAxisSize.max,
+                                                                                                  crossAxisAlignment: CrossAxisAlignment.start,
                                                                                                   children: [
                                                                                                     Padding(
                                                                                                       padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
@@ -2582,8 +2586,11 @@ class _PedidoPorEntregar5DIASWidgetState
                                                                         ),
                                                                         child: Image
                                                                             .network(
-                                                                          columnDeliverersRecord
-                                                                              .photoUrl,
+                                                                          valueOrDefault<
+                                                                              String>(
+                                                                            columnDeliverersRecord.photoUrl,
+                                                                            'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/assets%2FAsset%20predeterminado.png?alt=media&token=7c92986b-dd75-4755-8169-58cbbc6bce94',
+                                                                          ),
                                                                           fit: BoxFit
                                                                               .fitWidth,
                                                                         ),
@@ -3274,7 +3281,10 @@ class _PedidoPorEntregar5DIASWidgetState
                                                                                 ClipRRect(
                                                                               borderRadius: BorderRadius.circular(10),
                                                                               child: Image.network(
-                                                                                containerProductsRecord.mainImage,
+                                                                                valueOrDefault<String>(
+                                                                                  containerProductsRecord.mainImage,
+                                                                                  'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/assets%2FAsset.png?alt=media&token=85f6129c-7ee9-4db8-87ae-2e1adc4e010a',
+                                                                                ),
                                                                                 width: 100,
                                                                                 height: 100,
                                                                                 fit: BoxFit.cover,
@@ -3615,17 +3625,60 @@ class _PedidoPorEntregar5DIASWidgetState
                                         color: Color(0xFFEEEEEE),
                                         shape: BoxShape.circle,
                                       ),
-                                      child: Container(
-                                        width: 120,
-                                        height: 120,
-                                        clipBehavior: Clip.antiAlias,
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
+                                      child: StreamBuilder<List<UsersRecord>>(
+                                        stream: queryUsersRecord(
+                                          queryBuilder: (usersRecord) =>
+                                              usersRecord.where('uid',
+                                                  isEqualTo:
+                                                      columnOrdersForClientsRecord
+                                                          .customerId),
+                                          singleRecord: true,
                                         ),
-                                        child: Image.network(
-                                          'https://images.unsplash.com/photo-1614283233556-f35b0c801ef1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8d29tYW4lMjBwcm9maWxlfGVufDB8fDB8fA%3D%3D&w=1000&q=80',
-                                          fit: BoxFit.fitWidth,
-                                        ),
+                                        builder: (context, snapshot) {
+                                          // Customize what your widget looks like when it's loading.
+                                          if (!snapshot.hasData) {
+                                            return Center(
+                                              child: SizedBox(
+                                                width: 50,
+                                                height: 50,
+                                                child: SpinKitCircle(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryColor,
+                                                  size: 50,
+                                                ),
+                                              ),
+                                            );
+                                          }
+                                          List<UsersRecord>
+                                              circleImageUsersRecordList =
+                                              snapshot.data;
+                                          // Return an empty Container when the document does not exist.
+                                          if (snapshot.data.isEmpty) {
+                                            return Container();
+                                          }
+                                          final circleImageUsersRecord =
+                                              circleImageUsersRecordList
+                                                      .isNotEmpty
+                                                  ? circleImageUsersRecordList
+                                                      .first
+                                                  : null;
+                                          return Container(
+                                            width: 120,
+                                            height: 120,
+                                            clipBehavior: Clip.antiAlias,
+                                            decoration: BoxDecoration(
+                                              shape: BoxShape.circle,
+                                            ),
+                                            child: Image.network(
+                                              valueOrDefault<String>(
+                                                circleImageUsersRecord.photoUrl,
+                                                'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/assets%2FAsset%20predeterminado.png?alt=media&token=7c92986b-dd75-4755-8169-58cbbc6bce94',
+                                              ),
+                                              fit: BoxFit.fitWidth,
+                                            ),
+                                          );
+                                        },
                                       ),
                                     ),
                                   ],

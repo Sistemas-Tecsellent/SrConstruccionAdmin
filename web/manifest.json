@@ -1,6 +1,6 @@
 {
-    "name": "Portal Admin",
-    "short_name": "Portal Admin",
+    "name": "SrConstruccion Admin",
+    "short_name": "SrConstruccion Admin",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

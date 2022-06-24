@@ -1029,7 +1029,7 @@ class _VendedorComprasWidgetState extends State<VendedorComprasWidget> {
                                                                   ),
                                                                   child: Image
                                                                       .network(
-                                                                    'https://static.wixstatic.com/media/e077b4_b73ef6bd24084a308a3110b125132f84~mv2.png/v1/fill/w_225,h_225,al_c/e077b4_b73ef6bd24084a308a3110b125132f84~mv2.png',
+                                                                    'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/assets%2FAsset%20predeterminado.png?alt=media&token=7c92986b-dd75-4755-8169-58cbbc6bce94',
                                                                     fit: BoxFit
                                                                         .contain,
                                                                   ),

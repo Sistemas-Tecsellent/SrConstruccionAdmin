@@ -144,7 +144,7 @@ class _VerSellersWidgetState extends State<VerSellersWidget> {
                                               borderRadius:
                                                   BorderRadius.circular(10),
                                               child: Image.network(
-                                                'https://cms.grupoferrepat.net/assets/img/productos/17690_1.jpg',
+                                                'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/assets%2FAsset.png?alt=media&token=85f6129c-7ee9-4db8-87ae-2e1adc4e010a',
                                                 width: 100,
                                                 height: 100,
                                                 fit: BoxFit.cover,

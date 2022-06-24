@@ -1245,7 +1245,7 @@ class _PedidoHistorialSELLERWidgetState
                                                                             'Recolectando Productos',
                                                                             style: FlutterFlowTheme.of(context).bodyText1.override(
                                                                                   fontFamily: 'Montserrat',
-                                                                                  color: FlutterFlowTheme.of(context).primaryText,
+                                                                                  color: FlutterFlowTheme.of(context).lineColor,
                                                                                   fontSize: 12,
                                                                                 ),
                                                                           ),
@@ -1299,7 +1299,7 @@ class _PedidoHistorialSELLERWidgetState
                                                                             'Entregado',
                                                                             style: FlutterFlowTheme.of(context).bodyText1.override(
                                                                                   fontFamily: 'Montserrat',
-                                                                                  color: FlutterFlowTheme.of(context).lineColor,
+                                                                                  color: FlutterFlowTheme.of(context).primaryText,
                                                                                   fontSize: 12,
                                                                                 ),
                                                                           ),

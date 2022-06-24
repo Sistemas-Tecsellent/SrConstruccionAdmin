@@ -1,4 +1,6 @@
 import '../ajustes/ajustes_widget.dart';
+import '../auth/auth_util.dart';
+import '../backend/api_requests/api_calls.dart';
 import '../components/logo_completo_widget.dart';
 import '../components/notifications_widget.dart';
 import '../cotizacione_pendientes/cotizacione_pendientes_widget.dart';
@@ -7,6 +9,7 @@ import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../login/login_widget.dart';
 import '../pedidos/pedidos_widget.dart';
 import '../productos/productos_widget.dart';
 import '../promociones/promociones_widget.dart';
@@ -15,6 +18,7 @@ import '../repartidores_registrados/repartidores_registrados_widget.dart';
 import '../usuarios/usuarios_widget.dart';
 import '../vendedores_registrados/vendedores_registrados_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -27,14 +31,54 @@ class DashboardWidget extends StatefulWidget {
 }
 
 class _DashboardWidgetState extends State<DashboardWidget> {
+  ApiCallResponse isAdmin;
+  final scaffoldKey = GlobalKey<ScaffoldState>();
   DateTime datePicked1;
   DateTime datePicked2;
-  final scaffoldKey = GlobalKey<ScaffoldState>();
   TextEditingController textController;
 
   @override
   void initState() {
     super.initState();
+    // On page load action.
+    SchedulerBinding.instance?.addPostFrameCallback((_) async {
+      isAdmin = await IsUserAdminCall.call(
+        userEmail: currentUserEmail,
+      );
+      if (!(getJsonField(
+        (isAdmin?.jsonBody ?? ''),
+        r'''$.response''',
+      ))) {
+        await showDialog(
+          context: context,
+          builder: (alertDialogContext) {
+            return AlertDialog(
+              title: Text('Alerta'),
+              content: Text(
+                  'No es administrador. Se informara del intento de inicio de sesion'),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(alertDialogContext),
+                  child: Text('Ok'),
+                ),
+              ],
+            );
+          },
+        );
+        await signOut();
+      }
+      await Navigator.pushAndRemoveUntil(
+        context,
+        PageTransition(
+          type: PageTransitionType.fade,
+          duration: Duration(milliseconds: 0),
+          reverseDuration: Duration(milliseconds: 0),
+          child: LoginWidget(),
+        ),
+        (r) => false,
+      );
+    });
+
     textController = TextEditingController();
   }
 
