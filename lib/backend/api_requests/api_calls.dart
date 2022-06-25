@@ -287,3 +287,26 @@ class IsUserAdminCall {
         r'''$.response''',
       );
 }
+
+class PlaceNormalOrderCall {
+  static Future<ApiCallResponse> call({
+    String bundleId = '',
+    String clientId = '',
+    String products = '',
+    String storeId = '',
+  }) {
+    return ApiManager.instance.makeApiCall(
+      callName: 'placeNormalOrder',
+      apiUrl: 'https://',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'bundleId': bundleId,
+        'clientId': clientId,
+        'products': products,
+        'storeId': storeId,
+      },
+      returnBody: true,
+    );
+  }
+}
