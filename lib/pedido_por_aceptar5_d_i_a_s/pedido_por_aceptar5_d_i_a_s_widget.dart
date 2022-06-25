@@ -1157,6 +1157,12 @@ class _PedidoPorAceptar5DIASWidgetState
                                                                               crossAxisAlignment: CrossAxisAlignment.start,
                                                                               children: [
                                                                                 Container(
+                                                                                  width: MediaQuery.of(context).size.width * 0.03,
+                                                                                  decoration: BoxDecoration(
+                                                                                    color: Color(0x00EEEEEE),
+                                                                                  ),
+                                                                                ),
+                                                                                Container(
                                                                                   width: MediaQuery.of(context).size.width * 0.1,
                                                                                   decoration: BoxDecoration(
                                                                                     color: Color(0x00EEEEEE),
@@ -1226,12 +1232,6 @@ class _PedidoPorAceptar5DIASWidgetState
                                                                                             fontWeight: FontWeight.w500,
                                                                                           ),
                                                                                     ),
-                                                                                  ),
-                                                                                ),
-                                                                                Container(
-                                                                                  width: MediaQuery.of(context).size.width * 0.03,
-                                                                                  decoration: BoxDecoration(
-                                                                                    color: Color(0x00EEEEEE),
                                                                                   ),
                                                                                 ),
                                                                                 Container(
@@ -1326,6 +1326,31 @@ class _PedidoPorAceptar5DIASWidgetState
                                                                                         crossAxisAlignment: CrossAxisAlignment.center,
                                                                                         children: [
                                                                                           Container(
+                                                                                            width: MediaQuery.of(context).size.width * 0.03,
+                                                                                            decoration: BoxDecoration(
+                                                                                              color: Color(0x00EEEEEE),
+                                                                                            ),
+                                                                                            alignment: AlignmentDirectional(-1, 0),
+                                                                                            child: Row(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              mainAxisAlignment: MainAxisAlignment.center,
+                                                                                              children: [
+                                                                                                InkWell(
+                                                                                                  onTap: () async {
+                                                                                                    await actions.deleteOrder(
+                                                                                                      columnOrdersForStoresRecord.id,
+                                                                                                    );
+                                                                                                  },
+                                                                                                  child: Icon(
+                                                                                                    Icons.clear_rounded,
+                                                                                                    color: FlutterFlowTheme.of(context).alternate,
+                                                                                                    size: 20,
+                                                                                                  ),
+                                                                                                ),
+                                                                                              ],
+                                                                                            ),
+                                                                                          ),
+                                                                                          Container(
                                                                                             width: MediaQuery.of(context).size.width * 0.1,
                                                                                             decoration: BoxDecoration(
                                                                                               color: Color(0x00EEEEEE),
@@ -1417,6 +1442,7 @@ class _PedidoPorAceptar5DIASWidgetState
                                                                                                     final ordersForStoresUpdateData = createOrdersForStoresRecordData(
                                                                                                       guide: uploadedFileUrl,
                                                                                                       isByGuide: true,
+                                                                                                      shipmentType: 'paqueteria',
                                                                                                     );
                                                                                                     await columnOrdersForStoresRecord.reference.update(ordersForStoresUpdateData);
                                                                                                   },
@@ -1435,31 +1461,6 @@ class _PedidoPorAceptar5DIASWidgetState
                                                                                                       size: 24,
                                                                                                     ),
                                                                                                   ),
-                                                                                              ],
-                                                                                            ),
-                                                                                          ),
-                                                                                          Container(
-                                                                                            width: MediaQuery.of(context).size.width * 0.03,
-                                                                                            decoration: BoxDecoration(
-                                                                                              color: Color(0x00EEEEEE),
-                                                                                            ),
-                                                                                            alignment: AlignmentDirectional(-1, 0),
-                                                                                            child: Row(
-                                                                                              mainAxisSize: MainAxisSize.max,
-                                                                                              mainAxisAlignment: MainAxisAlignment.center,
-                                                                                              children: [
-                                                                                                InkWell(
-                                                                                                  onTap: () async {
-                                                                                                    await actions.deleteOrder(
-                                                                                                      columnOrdersForStoresRecord.id,
-                                                                                                    );
-                                                                                                  },
-                                                                                                  child: Icon(
-                                                                                                    Icons.delete_forever,
-                                                                                                    color: Color(0xFFAEAEAE),
-                                                                                                    size: 20,
-                                                                                                  ),
-                                                                                                ),
                                                                                               ],
                                                                                             ),
                                                                                           ),

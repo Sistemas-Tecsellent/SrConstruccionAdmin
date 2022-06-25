@@ -57,6 +57,9 @@ abstract class OrdersForStoresRecord
   String get assignedDeliverer;
 
   @nullable
+  String get shipmentType;
+
+  @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference get reference;
 
@@ -75,7 +78,8 @@ abstract class OrdersForStoresRecord
         ..isSentBySeller = false
         ..isCollectedByAdmin = false
         ..deliveredBy = ''
-        ..assignedDeliverer = '';
+        ..assignedDeliverer = ''
+        ..shipmentType = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('ordersForStores');
@@ -115,6 +119,7 @@ Map<String, dynamic> createOrdersForStoresRecordData({
   bool isCollectedByAdmin,
   String deliveredBy,
   String assignedDeliverer,
+  String shipmentType,
 }) =>
     serializers.toFirestore(
         OrdersForStoresRecord.serializer,
@@ -133,4 +138,5 @@ Map<String, dynamic> createOrdersForStoresRecordData({
           ..isSentBySeller = isSentBySeller
           ..isCollectedByAdmin = isCollectedByAdmin
           ..deliveredBy = deliveredBy
-          ..assignedDeliverer = assignedDeliverer));
+          ..assignedDeliverer = assignedDeliverer
+          ..shipmentType = shipmentType));
