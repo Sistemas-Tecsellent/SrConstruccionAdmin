@@ -129,6 +129,13 @@ class _$OrdersForStoresRecordSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.shipmentType;
+    if (value != null) {
+      result
+        ..add('shipmentType')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     value = object.reference;
     if (value != null) {
       result
@@ -212,6 +219,10 @@ class _$OrdersForStoresRecordSerializer
           result.assignedDeliverer = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
+        case 'shipmentType':
+          result.shipmentType = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
         case 'Document__Reference__Field':
           result.reference = serializers.deserialize(value,
                   specifiedType: const FullType(
@@ -257,6 +268,8 @@ class _$OrdersForStoresRecord extends OrdersForStoresRecord {
   @override
   final String assignedDeliverer;
   @override
+  final String shipmentType;
+  @override
   final DocumentReference<Object> reference;
 
   factory _$OrdersForStoresRecord(
@@ -279,6 +292,7 @@ class _$OrdersForStoresRecord extends OrdersForStoresRecord {
       this.isCollectedByAdmin,
       this.deliveredBy,
       this.assignedDeliverer,
+      this.shipmentType,
       this.reference})
       : super._();
 
@@ -310,6 +324,7 @@ class _$OrdersForStoresRecord extends OrdersForStoresRecord {
         isCollectedByAdmin == other.isCollectedByAdmin &&
         deliveredBy == other.deliveredBy &&
         assignedDeliverer == other.assignedDeliverer &&
+        shipmentType == other.shipmentType &&
         reference == other.reference;
   }
 
@@ -331,23 +346,27 @@ class _$OrdersForStoresRecord extends OrdersForStoresRecord {
                                                         $jc(
                                                             $jc(
                                                                 $jc(
-                                                                    0,
-                                                                    bundleId
+                                                                    $jc(
+                                                                        0,
+                                                                        bundleId
+                                                                            .hashCode),
+                                                                    type
                                                                         .hashCode),
-                                                                type.hashCode),
-                                                            id.hashCode),
-                                                        createdDate.hashCode),
-                                                    total.hashCode),
-                                                store.hashCode),
-                                            status.hashCode),
-                                        amountOfProducts.hashCode),
-                                    guide.hashCode),
-                                statusForAdmin.hashCode),
-                            isByGuide.hashCode),
-                        isSentBySeller.hashCode),
-                    isCollectedByAdmin.hashCode),
-                deliveredBy.hashCode),
-            assignedDeliverer.hashCode),
+                                                                id.hashCode),
+                                                            createdDate
+                                                                .hashCode),
+                                                        total.hashCode),
+                                                    store.hashCode),
+                                                status.hashCode),
+                                            amountOfProducts.hashCode),
+                                        guide.hashCode),
+                                    statusForAdmin.hashCode),
+                                isByGuide.hashCode),
+                            isSentBySeller.hashCode),
+                        isCollectedByAdmin.hashCode),
+                    deliveredBy.hashCode),
+                assignedDeliverer.hashCode),
+            shipmentType.hashCode),
         reference.hashCode));
   }
 
@@ -369,6 +388,7 @@ class _$OrdersForStoresRecord extends OrdersForStoresRecord {
           ..add('isCollectedByAdmin', isCollectedByAdmin)
           ..add('deliveredBy', deliveredBy)
           ..add('assignedDeliverer', assignedDeliverer)
+          ..add('shipmentType', shipmentType)
           ..add('reference', reference))
         .toString();
   }
@@ -443,6 +463,10 @@ class OrdersForStoresRecordBuilder
   set assignedDeliverer(String assignedDeliverer) =>
       _$this._assignedDeliverer = assignedDeliverer;
 
+  String _shipmentType;
+  String get shipmentType => _$this._shipmentType;
+  set shipmentType(String shipmentType) => _$this._shipmentType = shipmentType;
+
   DocumentReference<Object> _reference;
   DocumentReference<Object> get reference => _$this._reference;
   set reference(DocumentReference<Object> reference) =>
@@ -470,6 +494,7 @@ class OrdersForStoresRecordBuilder
       _isCollectedByAdmin = $v.isCollectedByAdmin;
       _deliveredBy = $v.deliveredBy;
       _assignedDeliverer = $v.assignedDeliverer;
+      _shipmentType = $v.shipmentType;
       _reference = $v.reference;
       _$v = null;
     }
@@ -506,6 +531,7 @@ class OrdersForStoresRecordBuilder
             isCollectedByAdmin: isCollectedByAdmin,
             deliveredBy: deliveredBy,
             assignedDeliverer: assignedDeliverer,
+            shipmentType: shipmentType,
             reference: reference);
     replace(_$result);
     return _$result;
