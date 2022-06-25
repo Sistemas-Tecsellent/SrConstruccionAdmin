@@ -67,7 +67,7 @@ class _IsDelivererApprovedWidgetState extends State<IsDelivererApprovedWidget> {
           ),
           offIcon: Icon(
             Icons.toggle_off,
-            color: FlutterFlowTheme.of(context).primaryColor,
+            color: Color(0xFF909090),
             size: 25,
           ),
         );

@@ -1315,7 +1315,11 @@ class _VendedoresPorAprobarWidgetState
                                                                             milliseconds:
                                                                                 0),
                                                                     child:
-                                                                        AprobarVendedorDetallesWidget(),
+                                                                        AprobarVendedorDetallesWidget(
+                                                                      sellerUID:
+                                                                          listViewSellersRecord
+                                                                              .uid,
+                                                                    ),
                                                                   ),
                                                                 );
                                                               },

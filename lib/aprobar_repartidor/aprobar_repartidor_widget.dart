@@ -143,7 +143,7 @@ class _AprobarRepartidorWidgetState extends State<AprobarRepartidorWidget> {
                                       .reference
                                       .update(deliverersUpdateData);
                                 },
-                                text: 'Guardar Cambios',
+                                text: 'Aprobar',
                                 icon: Icon(
                                   Icons.check_rounded,
                                   size: 15,

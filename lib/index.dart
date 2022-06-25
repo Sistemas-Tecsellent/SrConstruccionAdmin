@@ -14,11 +14,13 @@ export 'historial/historial_widget.dart' show HistorialWidget;
 export 'anadir_cupon/anadir_cupon_widget.dart' show AnadirCuponWidget;
 export 'ajustes/ajustes_widget.dart' show AjustesWidget;
 export 'promociones/promociones_widget.dart' show PromocionesWidget;
-export 'vendedores_por_aprobar/vendedores_por_aprobar_widget.dart'
-    show VendedoresPorAprobarWidget;
 export 'devoluciones/devoluciones_widget.dart' show DevolucionesWidget;
 export 'vendedores_registrados/vendedores_registrados_widget.dart'
     show VendedoresRegistradosWidget;
+export 'vendedores_por_aprobar/vendedores_por_aprobar_widget.dart'
+    show VendedoresPorAprobarWidget;
+export 'aprobar_vendedor_detalles/aprobar_vendedor_detalles_widget.dart'
+    show AprobarVendedorDetallesWidget;
 export 'documentos/documentos_widget.dart' show DocumentosWidget;
 export 'vendedor_detalles/vendedor_detalles_widget.dart'
     show VendedorDetallesWidget;
@@ -51,8 +53,6 @@ export 'anadir_repartidor/anadir_repartidor_widget.dart'
     show AnadirRepartidorWidget;
 export 'aprobar_vendedor_datos_bancarios/aprobar_vendedor_datos_bancarios_widget.dart'
     show AprobarVendedorDatosBancariosWidget;
-export 'aprobar_vendedor_detalles/aprobar_vendedor_detalles_widget.dart'
-    show AprobarVendedorDetallesWidget;
 export 'aprobar_vendedor_documentos/aprobar_vendedor_documentos_widget.dart'
     show AprobarVendedorDocumentosWidget;
 export 'crear_vendedor_detalles/crear_vendedor_detalles_widget.dart'
