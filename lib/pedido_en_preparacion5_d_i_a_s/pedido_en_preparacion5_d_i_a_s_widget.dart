@@ -709,112 +709,127 @@ class _PedidoEnPreparacion5DIASWidgetState
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    20, 0, 35, 20),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Row(
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                                child: Container(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.56,
+                                  decoration: BoxDecoration(),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        20, 0, 35, 20),
+                                    child: Row(
                                       mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Text(
-                                          'ID Pedido - ',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyText1
-                                              .override(
-                                                fontFamily: 'Montserrat',
-                                                fontSize: 18,
-                                                fontWeight: FontWeight.w500,
-                                              ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  5, 0, 0, 0),
-                                          child: Text(
-                                            widget.orderId,
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyText1
-                                                .override(
-                                                  fontFamily: 'Montserrat',
-                                                  fontSize: 18,
-                                                ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Text(
-                                      '1-5 DÍAS',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyText1
-                                          .override(
-                                            fontFamily: 'Montserrat',
-                                            color: FlutterFlowTheme.of(context)
-                                                .green,
-                                            fontSize: 18,
-                                            fontWeight: FontWeight.w600,
-                                            fontStyle: FontStyle.italic,
-                                          ),
-                                    ),
-                                    Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.end,
-                                      children: [
-                                        Container(
-                                          decoration: BoxDecoration(
-                                            color: Color(0x00EEEEEE),
-                                          ),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0, 0, 0, 5),
-                                            child: Text(
-                                              'PREPARACIÓN',
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Text(
+                                              'ID Pedido - ',
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyText1
                                                   .override(
                                                     fontFamily: 'Montserrat',
-                                                    color: Color(0xFF909090),
-                                                    fontSize: 14,
+                                                    fontSize: 18,
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                             ),
-                                          ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(5, 0, 0, 0),
+                                              child: Text(
+                                                widget.orderId,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyText1
+                                                        .override(
+                                                          fontFamily:
+                                                              'Montserrat',
+                                                          fontSize: 18,
+                                                        ),
+                                              ),
+                                            ),
+                                          ],
                                         ),
-                                        Container(
-                                          decoration: BoxDecoration(
-                                            color: Color(0x00EEEEEE),
-                                          ),
-                                          child: LinearPercentIndicator(
-                                            percent: 0.5,
-                                            width: 100,
-                                            lineHeight: 24,
-                                            animation: true,
-                                            progressColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .primaryColor,
-                                            backgroundColor: Color(0xFFF1F4F8),
-                                            center: Text(
-                                              '50%',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
+                                        Text(
+                                          '1-5 DÍAS',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyText1
+                                              .override(
+                                                fontFamily: 'Montserrat',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .green,
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.w600,
+                                                fontStyle: FontStyle.italic,
+                                              ),
+                                        ),
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.end,
+                                          children: [
+                                            Container(
+                                              decoration: BoxDecoration(
+                                                color: Color(0x00EEEEEE),
+                                              ),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(0, 0, 0, 5),
+                                                child: Text(
+                                                  'PREPARACIÓN',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyText1
+                                                      .override(
+                                                        fontFamily:
+                                                            'Montserrat',
+                                                        color:
+                                                            Color(0xFF909090),
+                                                        fontSize: 14,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                            Container(
+                                              decoration: BoxDecoration(
+                                                color: Color(0x00EEEEEE),
+                                              ),
+                                              child: LinearPercentIndicator(
+                                                percent: 0.5,
+                                                width: 100,
+                                                lineHeight: 24,
+                                                animation: true,
+                                                progressColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryColor,
+                                                backgroundColor:
+                                                    Color(0xFFF1F4F8),
+                                                center: Text(
+                                                  '50%',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
                                                       .bodyText1
                                                       .override(
                                                         fontFamily:
                                                             'Montserrat',
                                                         color: Colors.black,
                                                       ),
+                                                ),
+                                                padding: EdgeInsets.zero,
+                                              ),
                                             ),
-                                            padding: EdgeInsets.zero,
-                                          ),
+                                          ],
                                         ),
                                       ],
                                     ),
-                                  ],
+                                  ),
                                 ),
                               ),
                               Padding(

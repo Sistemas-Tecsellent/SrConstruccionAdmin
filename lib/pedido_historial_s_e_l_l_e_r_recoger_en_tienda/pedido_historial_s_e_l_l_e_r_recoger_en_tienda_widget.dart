@@ -1259,7 +1259,7 @@ class _PedidoHistorialSELLERRecogerEnTiendaWidgetState
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 10, 20, 0),
+                                            0, 10, 70, 0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:

@@ -604,69 +604,63 @@ class _PedidoPorEntregarEXPRESSWidgetState
                           ),
                           Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(20, 0, 0, 20),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Expanded(
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 0, 35, 0),
-                                    child: Row(
+                                EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                            child: Container(
+                              width: MediaQuery.of(context).size.width * 0.56,
+                              decoration: BoxDecoration(),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0, 10, 0, 30),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Row(
                                       mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Text(
-                                              'ID Pedido - ',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyText1
-                                                  .override(
-                                                    fontFamily: 'Montserrat',
-                                                    fontSize: 18,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(5, 0, 0, 0),
-                                              child: Text(
-                                                widget.orderId,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyText1
-                                                        .override(
-                                                          fontFamily:
-                                                              'Montserrat',
-                                                          fontSize: 18,
-                                                        ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
                                         Text(
-                                          'EXPRESS',
+                                          'ID Pedido - ',
                                           style: FlutterFlowTheme.of(context)
                                               .bodyText1
                                               .override(
                                                 fontFamily: 'Montserrat',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .green,
                                                 fontSize: 18,
-                                                fontWeight: FontWeight.w600,
-                                                fontStyle: FontStyle.italic,
+                                                fontWeight: FontWeight.w500,
                                               ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5, 0, 0, 0),
+                                          child: Text(
+                                            widget.orderId,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyText1
+                                                .override(
+                                                  fontFamily: 'Montserrat',
+                                                  fontSize: 18,
+                                                ),
+                                          ),
                                         ),
                                       ],
                                     ),
-                                  ),
+                                    Text(
+                                      'EXPRESS',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1
+                                          .override(
+                                            fontFamily: 'Montserrat',
+                                            color: FlutterFlowTheme.of(context)
+                                                .green,
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w600,
+                                            fontStyle: FontStyle.italic,
+                                          ),
+                                    ),
+                                  ],
                                 ),
-                              ],
+                              ),
                             ),
                           ),
                           Padding(
@@ -1681,7 +1675,7 @@ class _PedidoPorEntregarEXPRESSWidgetState
                                               width: MediaQuery.of(context)
                                                       .size
                                                       .width *
-                                                  0.55,
+                                                  0.56,
                                               decoration: BoxDecoration(
                                                 color: Colors.white,
                                                 borderRadius:
@@ -1693,8 +1687,9 @@ class _PedidoPorEntregarEXPRESSWidgetState
                                                   Container(
                                                     width:
                                                         MediaQuery.of(context)
-                                                            .size
-                                                            .width,
+                                                                .size
+                                                                .width *
+                                                            0.56,
                                                     decoration: BoxDecoration(),
                                                     child: Padding(
                                                       padding:

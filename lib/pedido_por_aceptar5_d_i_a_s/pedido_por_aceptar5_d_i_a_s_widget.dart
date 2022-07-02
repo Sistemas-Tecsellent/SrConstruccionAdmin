@@ -210,7 +210,6 @@ class _PedidoPorAceptar5DIASWidgetState
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    width: MediaQuery.of(context).size.width * 0.18,
                     decoration: BoxDecoration(),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -920,6 +919,9 @@ class _PedidoPorAceptar5DIASWidgetState
                                                                 mainAxisAlignment:
                                                                     MainAxisAlignment
                                                                         .spaceBetween,
+                                                                crossAxisAlignment:
+                                                                    CrossAxisAlignment
+                                                                        .start,
                                                                 children: [
                                                                   Column(
                                                                     mainAxisSize:
@@ -1476,7 +1478,7 @@ class _PedidoPorAceptar5DIASWidgetState
                                                                                                 ToggleIcon(
                                                                                                   onPressed: () async {
                                                                                                     final ordersForStoresUpdateData = createOrdersForStoresRecordData(
-                                                                                                      isSentBySeller: columnOrdersForStoresRecord.isSentBySeller,
+                                                                                                      isSentBySeller: !columnOrdersForStoresRecord.isSentBySeller,
                                                                                                     );
                                                                                                     await columnOrdersForStoresRecord.reference.update(ordersForStoresUpdateData);
                                                                                                   },
@@ -1507,7 +1509,7 @@ class _PedidoPorAceptar5DIASWidgetState
                                                                                                 ToggleIcon(
                                                                                                   onPressed: () async {
                                                                                                     final ordersForStoresUpdateData = createOrdersForStoresRecordData(
-                                                                                                      isCollectedByAdmin: columnOrdersForStoresRecord.isCollectedByAdmin,
+                                                                                                      isCollectedByAdmin: !columnOrdersForStoresRecord.isCollectedByAdmin,
                                                                                                     );
                                                                                                     await columnOrdersForStoresRecord.reference.update(ordersForStoresUpdateData);
                                                                                                   },
@@ -1543,6 +1545,46 @@ class _PedidoPorAceptar5DIASWidgetState
                                                                     ),
                                                                   ],
                                                                 ),
+                                                              ),
+                                                            ),
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          20,
+                                                                          30,
+                                                                          0,
+                                                                          0),
+                                                              child: Row(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0,
+                                                                            0,
+                                                                            0,
+                                                                            5),
+                                                                    child: Text(
+                                                                      'ESPECIFICA EL MÉTODO DE ENVÍO PARA EL CLIENTE',
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyText1
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Montserrat',
+                                                                            color:
+                                                                                Color(0xFF909090),
+                                                                            fontSize:
+                                                                                14,
+                                                                            fontWeight:
+                                                                                FontWeight.w500,
+                                                                          ),
+                                                                    ),
+                                                                  ),
+                                                                ],
                                                               ),
                                                             ),
                                                             Padding(

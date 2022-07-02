@@ -54,7 +54,7 @@ class _IsSellerApprovedToggleWidgetState
         return ToggleIcon(
           onPressed: () async {
             final sellersUpdateData = createSellersRecordData(
-              isApproved: toggleIconSellersRecord.isApproved,
+              isApproved: !toggleIconSellersRecord.isApproved,
             );
             await toggleIconSellersRecord.reference.update(sellersUpdateData);
           },

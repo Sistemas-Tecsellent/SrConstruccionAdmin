@@ -1393,7 +1393,7 @@ class _PedidoPorAceptarEXPRESSWidgetState
                                             decoration: BoxDecoration(),
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(20, 0, 20, 0),
+                                                  .fromSTEB(0, 0, 20, 0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -1407,15 +1407,15 @@ class _PedidoPorAceptarEXPRESSWidgetState
                                                         MediaQuery.of(context)
                                                                 .size
                                                                 .width *
-                                                            0.52,
+                                                            0.56,
                                                     decoration: BoxDecoration(
-                                                      color: Color(0x00EEEEEE),
+                                                      color: Colors.white,
                                                     ),
                                                     child: Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0, 0, 0, 20),
+                                                                  20, 0, 0, 20),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
