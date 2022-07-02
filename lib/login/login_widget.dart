@@ -115,6 +115,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                   .size
                                                   .width *
                                               0.6,
+                                          constraints: BoxConstraints(
+                                            maxWidth: 500,
+                                          ),
                                           decoration: BoxDecoration(
                                             color: Colors.white,
                                             borderRadius:

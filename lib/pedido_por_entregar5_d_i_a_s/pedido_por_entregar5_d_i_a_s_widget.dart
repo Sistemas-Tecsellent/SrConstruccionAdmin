@@ -682,53 +682,63 @@ class _PedidoPorEntregar5DIASWidgetState
                           ),
                           Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(20, 0, 35, 20),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
+                                EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                            child: Container(
+                              width: MediaQuery.of(context).size.width * 0.56,
+                              decoration: BoxDecoration(),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    20, 0, 35, 20),
+                                child: Row(
                                   mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Text(
+                                          'ID Pedido - ',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyText1
+                                              .override(
+                                                fontFamily: 'Montserrat',
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5, 0, 0, 0),
+                                          child: Text(
+                                            widget.orderId,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyText1
+                                                .override(
+                                                  fontFamily: 'Montserrat',
+                                                  fontSize: 18,
+                                                ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                     Text(
-                                      'ID Pedido - ',
+                                      '1-5 DÍAS',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyText1
                                           .override(
                                             fontFamily: 'Montserrat',
+                                            color: FlutterFlowTheme.of(context)
+                                                .green,
                                             fontSize: 18,
-                                            fontWeight: FontWeight.w500,
+                                            fontWeight: FontWeight.w600,
+                                            fontStyle: FontStyle.italic,
                                           ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          5, 0, 0, 0),
-                                      child: Text(
-                                        widget.orderId,
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyText1
-                                            .override(
-                                              fontFamily: 'Montserrat',
-                                              fontSize: 18,
-                                            ),
-                                      ),
                                     ),
                                   ],
                                 ),
-                                Text(
-                                  '1-5 DÍAS',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyText1
-                                      .override(
-                                        fontFamily: 'Montserrat',
-                                        color:
-                                            FlutterFlowTheme.of(context).green,
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w600,
-                                        fontStyle: FontStyle.italic,
-                                      ),
-                                ),
-                              ],
+                              ),
                             ),
                           ),
                           Padding(
@@ -2468,7 +2478,7 @@ class _PedidoPorEntregar5DIASWidgetState
                                                     padding:
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(
-                                                                0, 20, 30, 20),
+                                                                20, 20, 50, 20),
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,

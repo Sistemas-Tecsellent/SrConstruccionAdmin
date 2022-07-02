@@ -584,6 +584,7 @@ class _AjustesWidgetState extends State<AjustesWidget> {
                         children: [
                           Row(
                             mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(

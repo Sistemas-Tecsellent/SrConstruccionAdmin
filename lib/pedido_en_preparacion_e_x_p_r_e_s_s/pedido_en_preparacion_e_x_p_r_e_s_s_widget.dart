@@ -621,7 +621,6 @@ class _PedidoEnPreparacionEXPRESSWidgetState
                                                   .width *
                                               0.56,
                                           decoration: BoxDecoration(
-                                            color: Colors.white,
                                             borderRadius:
                                                 BorderRadius.circular(10),
                                           ),

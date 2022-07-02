@@ -1,6 +1,7 @@
 import '../ajustes/ajustes_widget.dart';
 import '../auth/auth_util.dart';
 import '../backend/api_requests/api_calls.dart';
+import '../backend/backend.dart';
 import '../components/logo_completo_widget.dart';
 import '../components/notifications_widget.dart';
 import '../cotizacione_pendientes/cotizacione_pendientes_widget.dart';
@@ -9,6 +10,7 @@ import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../ingresacostodeenvio/ingresacostodeenvio_widget.dart';
 import '../pedidos/pedidos_widget.dart';
 import '../productos/productos_widget.dart';
 import '../promociones/promociones_widget.dart';
@@ -611,6 +613,212 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
+                            StreamBuilder<List<PricingRequestsRecord>>(
+                              stream: queryPricingRequestsRecord(
+                                queryBuilder: (pricingRequestsRecord) =>
+                                    pricingRequestsRecord
+                                        .where('assignedTo', isEqualTo: 'admin')
+                                        .where('active', isEqualTo: true),
+                              ),
+                              builder: (context, snapshot) {
+                                // Customize what your widget looks like when it's loading.
+                                if (!snapshot.hasData) {
+                                  return Center(
+                                    child: SizedBox(
+                                      width: 50,
+                                      height: 50,
+                                      child: SpinKitCircle(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryColor,
+                                        size: 50,
+                                      ),
+                                    ),
+                                  );
+                                }
+                                List<PricingRequestsRecord>
+                                    rowPricingRequestsRecordList =
+                                    snapshot.data;
+                                return Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: List.generate(
+                                      rowPricingRequestsRecordList.length,
+                                      (rowIndex) {
+                                    final rowPricingRequestsRecord =
+                                        rowPricingRequestsRecordList[rowIndex];
+                                    return Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0, 0, 20, 0),
+                                      child: InkWell(
+                                        onTap: () async {
+                                          await Navigator.push(
+                                            context,
+                                            PageTransition(
+                                              type: PageTransitionType.fade,
+                                              duration:
+                                                  Duration(milliseconds: 0),
+                                              reverseDuration:
+                                                  Duration(milliseconds: 0),
+                                              child: IngresacostodeenvioWidget(
+                                                orderId:
+                                                    rowPricingRequestsRecord.id,
+                                              ),
+                                            ),
+                                          );
+                                        },
+                                        child: Container(
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.182,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .green,
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                          ),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.min,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(20, 20, 20, 0),
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Expanded(
+                                                      child: Text(
+                                                        '¡Añade costo de Envío!',
+                                                        style: FlutterFlowTheme
+                                                                .of(context)
+                                                            .bodyText1
+                                                            .override(
+                                                              fontFamily:
+                                                                  'Montserrat',
+                                                              color:
+                                                                  Colors.white,
+                                                              fontSize: 17,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
+                                                            ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(20, 0, 20, 0),
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Text(
+                                                      'El cliente espera',
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyText1
+                                                          .override(
+                                                            fontFamily:
+                                                                'Montserrat',
+                                                            color: Colors.white,
+                                                            fontSize: 15,
+                                                          ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(0, 0, 0, 5),
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.end,
+                                                  children: [
+                                                    Container(
+                                                      width: 100,
+                                                      height: 30,
+                                                      decoration:
+                                                          BoxDecoration(),
+                                                      child: InkWell(
+                                                        onTap: () async {
+                                                          await Navigator.push(
+                                                            context,
+                                                            PageTransition(
+                                                              type:
+                                                                  PageTransitionType
+                                                                      .fade,
+                                                              duration: Duration(
+                                                                  milliseconds:
+                                                                      0),
+                                                              reverseDuration:
+                                                                  Duration(
+                                                                      milliseconds:
+                                                                          0),
+                                                              child:
+                                                                  IngresacostodeenvioWidget(),
+                                                            ),
+                                                          );
+                                                        },
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0,
+                                                                          0,
+                                                                          3,
+                                                                          0),
+                                                              child: Text(
+                                                                'Ir',
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyText1
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Montserrat',
+                                                                      color: Colors
+                                                                          .white,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w600,
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                            Icon(
+                                                              Icons
+                                                                  .arrow_forward_rounded,
+                                                              color:
+                                                                  Colors.white,
+                                                              size: 24,
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    );
+                                  }),
+                                );
+                              },
+                            ),
                             Padding(
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(0, 10, 0, 20),

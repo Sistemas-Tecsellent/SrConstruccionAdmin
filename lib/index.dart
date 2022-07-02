@@ -68,10 +68,10 @@ export 'crear_vendedor_datos_bancarios/crear_vendedor_datos_bancarios_widget.dar
     show CrearVendedorDatosBancariosWidget;
 export 'usuarios/usuarios_widget.dart' show UsuariosWidget;
 export 'marcas/marcas_widget.dart' show MarcasWidget;
-export 'pedido_por_aceptar5_d_i_a_s/pedido_por_aceptar5_d_i_a_s_widget.dart'
-    show PedidoPorAceptar5DIASWidget;
 export 'crear_categoria/crear_categoria_widget.dart' show CrearCategoriaWidget;
 export 'complementos/complementos_widget.dart' show ComplementosWidget;
+export 'pedido_por_aceptar5_d_i_a_s/pedido_por_aceptar5_d_i_a_s_widget.dart'
+    show PedidoPorAceptar5DIASWidget;
 export 'crear_marca/crear_marca_widget.dart' show CrearMarcaWidget;
 export 'pedido_por_entregar_e_x_p_r_e_s_s/pedido_por_entregar_e_x_p_r_e_s_s_widget.dart'
     show PedidoPorEntregarEXPRESSWidget;
@@ -103,9 +103,9 @@ export 'usuario/usuario_widget.dart' show UsuarioWidget;
 export 'usuario_historial/usuario_historial_widget.dart'
     show UsuarioHistorialWidget;
 export 'usuario_pedidos/usuario_pedidos_widget.dart' show UsuarioPedidosWidget;
-export 'login/login_widget.dart' show LoginWidget;
 export 'editar_categoria/editar_categoria_widget.dart'
     show EditarCategoriaWidget;
+export 'login/login_widget.dart' show LoginWidget;
 export 'coleccionesapp/coleccionesapp_widget.dart' show ColeccionesappWidget;
 export 'detalles_cotizacion2/detalles_cotizacion2_widget.dart'
     show DetallesCotizacion2Widget;
@@ -122,3 +122,5 @@ export 'seller_pedido_por_entregar_r_e_c_o_g_e_r_e_n_t_i_e_n_d_a/seller_pedido_p
     show SellerPedidoPorEntregarRECOGERENTIENDAWidget;
 export 'pedido_historial_s_e_l_l_e_r_recoger_en_tienda/pedido_historial_s_e_l_l_e_r_recoger_en_tienda_widget.dart'
     show PedidoHistorialSELLERRecogerEnTiendaWidget;
+export 'ingresacostodeenvio/ingresacostodeenvio_widget.dart'
+    show IngresacostodeenvioWidget;

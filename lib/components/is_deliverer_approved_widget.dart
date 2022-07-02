@@ -54,7 +54,7 @@ class _IsDelivererApprovedWidgetState extends State<IsDelivererApprovedWidget> {
         return ToggleIcon(
           onPressed: () async {
             final deliverersUpdateData = createDeliverersRecordData(
-              isApproved: toggleIconDeliverersRecord.isApproved,
+              isApproved: !toggleIconDeliverersRecord.isApproved,
             );
             await toggleIconDeliverersRecord.reference
                 .update(deliverersUpdateData);
