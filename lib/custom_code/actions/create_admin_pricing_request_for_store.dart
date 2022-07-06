@@ -10,7 +10,7 @@ import 'package:cloud_functions/cloud_functions.dart';
 
 Future createAdminPricingRequestForStore(
   String storeId,
-  String products,
+  List<dynamic> products,
   String pricingRequestId,
 ) async {
   HttpsCallable createAdminPricingRequestForStore = FirebaseFunctions.instance
