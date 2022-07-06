@@ -53,13 +53,6 @@ class _$PricingRequestsRecordSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.onwerAddress;
-    if (value != null) {
-      result
-        ..add('onwerAddress')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
     value = object.ownerPhone;
     if (value != null) {
       result
@@ -109,6 +102,28 @@ class _$PricingRequestsRecordSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.totalSuppliersIds;
+    if (value != null) {
+      result
+        ..add('totalSuppliersIds')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(BuiltList, const [const FullType(String)])));
+    }
+    value = object.createdDate;
+    if (value != null) {
+      result
+        ..add('createdDate')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(DateTime)));
+    }
+    value = object.ownerAddress;
+    if (value != null) {
+      result
+        ..add('ownerAddress')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     value = object.reference;
     if (value != null) {
       result
@@ -148,10 +163,6 @@ class _$PricingRequestsRecordSerializer
           result.ownerName = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
-        case 'onwerAddress':
-          result.onwerAddress = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
         case 'ownerPhone':
           result.ownerPhone = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
@@ -180,6 +191,20 @@ class _$PricingRequestsRecordSerializer
           result.deliveryDate = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
+        case 'totalSuppliersIds':
+          result.totalSuppliersIds.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(BuiltList, const [const FullType(String)]))
+              as BuiltList<Object>);
+          break;
+        case 'createdDate':
+          result.createdDate = serializers.deserialize(value,
+              specifiedType: const FullType(DateTime)) as DateTime;
+          break;
+        case 'ownerAddress':
+          result.ownerAddress = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
         case 'Document__Reference__Field':
           result.reference = serializers.deserialize(value,
                   specifiedType: const FullType(
@@ -203,8 +228,6 @@ class _$PricingRequestsRecord extends PricingRequestsRecord {
   @override
   final String ownerName;
   @override
-  final String onwerAddress;
-  @override
   final String ownerPhone;
   @override
   final double productsTotal;
@@ -219,6 +242,12 @@ class _$PricingRequestsRecord extends PricingRequestsRecord {
   @override
   final String deliveryDate;
   @override
+  final BuiltList<String> totalSuppliersIds;
+  @override
+  final DateTime createdDate;
+  @override
+  final String ownerAddress;
+  @override
   final DocumentReference<Object> reference;
 
   factory _$PricingRequestsRecord(
@@ -230,7 +259,6 @@ class _$PricingRequestsRecord extends PricingRequestsRecord {
       this.checkoutId,
       this.owner,
       this.ownerName,
-      this.onwerAddress,
       this.ownerPhone,
       this.productsTotal,
       this.shipmentPrice,
@@ -238,6 +266,9 @@ class _$PricingRequestsRecord extends PricingRequestsRecord {
       this.deliveryTime,
       this.active,
       this.deliveryDate,
+      this.totalSuppliersIds,
+      this.createdDate,
+      this.ownerAddress,
       this.reference})
       : super._();
 
@@ -258,7 +289,6 @@ class _$PricingRequestsRecord extends PricingRequestsRecord {
         checkoutId == other.checkoutId &&
         owner == other.owner &&
         ownerName == other.ownerName &&
-        onwerAddress == other.onwerAddress &&
         ownerPhone == other.ownerPhone &&
         productsTotal == other.productsTotal &&
         shipmentPrice == other.shipmentPrice &&
@@ -266,6 +296,9 @@ class _$PricingRequestsRecord extends PricingRequestsRecord {
         deliveryTime == other.deliveryTime &&
         active == other.active &&
         deliveryDate == other.deliveryDate &&
+        totalSuppliersIds == other.totalSuppliersIds &&
+        createdDate == other.createdDate &&
+        ownerAddress == other.ownerAddress &&
         reference == other.reference;
   }
 
@@ -282,18 +315,24 @@ class _$PricingRequestsRecord extends PricingRequestsRecord {
                                     $jc(
                                         $jc(
                                             $jc(
-                                                $jc($jc(0, id.hashCode),
-                                                    checkoutId.hashCode),
-                                                owner.hashCode),
-                                            ownerName.hashCode),
-                                        onwerAddress.hashCode),
-                                    ownerPhone.hashCode),
-                                productsTotal.hashCode),
-                            shipmentPrice.hashCode),
-                        assignedTo.hashCode),
-                    deliveryTime.hashCode),
-                active.hashCode),
-            deliveryDate.hashCode),
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(0, id.hashCode),
+                                                            checkoutId
+                                                                .hashCode),
+                                                        owner.hashCode),
+                                                    ownerName.hashCode),
+                                                ownerPhone.hashCode),
+                                            productsTotal.hashCode),
+                                        shipmentPrice.hashCode),
+                                    assignedTo.hashCode),
+                                deliveryTime.hashCode),
+                            active.hashCode),
+                        deliveryDate.hashCode),
+                    totalSuppliersIds.hashCode),
+                createdDate.hashCode),
+            ownerAddress.hashCode),
         reference.hashCode));
   }
 
@@ -304,7 +343,6 @@ class _$PricingRequestsRecord extends PricingRequestsRecord {
           ..add('checkoutId', checkoutId)
           ..add('owner', owner)
           ..add('ownerName', ownerName)
-          ..add('onwerAddress', onwerAddress)
           ..add('ownerPhone', ownerPhone)
           ..add('productsTotal', productsTotal)
           ..add('shipmentPrice', shipmentPrice)
@@ -312,6 +350,9 @@ class _$PricingRequestsRecord extends PricingRequestsRecord {
           ..add('deliveryTime', deliveryTime)
           ..add('active', active)
           ..add('deliveryDate', deliveryDate)
+          ..add('totalSuppliersIds', totalSuppliersIds)
+          ..add('createdDate', createdDate)
+          ..add('ownerAddress', ownerAddress)
           ..add('reference', reference))
         .toString();
   }
@@ -336,10 +377,6 @@ class PricingRequestsRecordBuilder
   String _ownerName;
   String get ownerName => _$this._ownerName;
   set ownerName(String ownerName) => _$this._ownerName = ownerName;
-
-  String _onwerAddress;
-  String get onwerAddress => _$this._onwerAddress;
-  set onwerAddress(String onwerAddress) => _$this._onwerAddress = onwerAddress;
 
   String _ownerPhone;
   String get ownerPhone => _$this._ownerPhone;
@@ -371,6 +408,20 @@ class PricingRequestsRecordBuilder
   String get deliveryDate => _$this._deliveryDate;
   set deliveryDate(String deliveryDate) => _$this._deliveryDate = deliveryDate;
 
+  ListBuilder<String> _totalSuppliersIds;
+  ListBuilder<String> get totalSuppliersIds =>
+      _$this._totalSuppliersIds ??= new ListBuilder<String>();
+  set totalSuppliersIds(ListBuilder<String> totalSuppliersIds) =>
+      _$this._totalSuppliersIds = totalSuppliersIds;
+
+  DateTime _createdDate;
+  DateTime get createdDate => _$this._createdDate;
+  set createdDate(DateTime createdDate) => _$this._createdDate = createdDate;
+
+  String _ownerAddress;
+  String get ownerAddress => _$this._ownerAddress;
+  set ownerAddress(String ownerAddress) => _$this._ownerAddress = ownerAddress;
+
   DocumentReference<Object> _reference;
   DocumentReference<Object> get reference => _$this._reference;
   set reference(DocumentReference<Object> reference) =>
@@ -387,7 +438,6 @@ class PricingRequestsRecordBuilder
       _checkoutId = $v.checkoutId;
       _owner = $v.owner;
       _ownerName = $v.ownerName;
-      _onwerAddress = $v.onwerAddress;
       _ownerPhone = $v.ownerPhone;
       _productsTotal = $v.productsTotal;
       _shipmentPrice = $v.shipmentPrice;
@@ -395,6 +445,9 @@ class PricingRequestsRecordBuilder
       _deliveryTime = $v.deliveryTime;
       _active = $v.active;
       _deliveryDate = $v.deliveryDate;
+      _totalSuppliersIds = $v.totalSuppliersIds?.toBuilder();
+      _createdDate = $v.createdDate;
+      _ownerAddress = $v.ownerAddress;
       _reference = $v.reference;
       _$v = null;
     }
@@ -414,21 +467,36 @@ class PricingRequestsRecordBuilder
 
   @override
   _$PricingRequestsRecord build() {
-    final _$result = _$v ??
-        new _$PricingRequestsRecord._(
-            id: id,
-            checkoutId: checkoutId,
-            owner: owner,
-            ownerName: ownerName,
-            onwerAddress: onwerAddress,
-            ownerPhone: ownerPhone,
-            productsTotal: productsTotal,
-            shipmentPrice: shipmentPrice,
-            assignedTo: assignedTo,
-            deliveryTime: deliveryTime,
-            active: active,
-            deliveryDate: deliveryDate,
-            reference: reference);
+    _$PricingRequestsRecord _$result;
+    try {
+      _$result = _$v ??
+          new _$PricingRequestsRecord._(
+              id: id,
+              checkoutId: checkoutId,
+              owner: owner,
+              ownerName: ownerName,
+              ownerPhone: ownerPhone,
+              productsTotal: productsTotal,
+              shipmentPrice: shipmentPrice,
+              assignedTo: assignedTo,
+              deliveryTime: deliveryTime,
+              active: active,
+              deliveryDate: deliveryDate,
+              totalSuppliersIds: _totalSuppliersIds?.build(),
+              createdDate: createdDate,
+              ownerAddress: ownerAddress,
+              reference: reference);
+    } catch (_) {
+      String _$failedField;
+      try {
+        _$failedField = 'totalSuppliersIds';
+        _totalSuppliersIds?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            'PricingRequestsRecord', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

@@ -1,27 +1,9 @@
-import '../ajustes/ajustes_widget.dart';
 import '../components/logo_completo_widget.dart';
 import '../components/notifications_widget.dart';
-import '../cotizacione_pendientes/cotizacione_pendientes_widget.dart';
-import '../dashboard/dashboard_widget.dart';
-import '../finanzastodaslascompras/finanzastodaslascompras_widget.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../pedidos/pedidos_widget.dart';
-import '../productos/productos_widget.dart';
-import '../promociones/promociones_widget.dart';
-import '../registro_web/registro_web_widget.dart';
-import '../repartidores_registrados/repartidores_registrados_widget.dart';
-import '../usuarios/usuarios_widget.dart';
-import '../vendedor_compras/vendedor_compras_widget.dart';
-import '../vendedor_detalles/vendedor_detalles_widget.dart';
-import '../vendedor_documentos/vendedor_documentos_widget.dart';
-import '../vendedor_pagos/vendedor_pagos_widget.dart';
-import '../vendedor_productos_categorias/vendedor_productos_categorias_widget.dart';
-import '../vendedor_productos_marcas/vendedor_productos_marcas_widget.dart';
-import '../vendedordatosbancarios/vendedordatosbancarios_widget.dart';
-import '../vendedores_registrados/vendedores_registrados_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -102,7 +84,7 @@ class _VendedorProductosWidgetState extends State<VendedorProductosWidget> {
                                 color: Colors.transparent,
                                 width: 1,
                               ),
-                              borderRadius: 5,
+                              borderRadius: BorderRadius.circular(5),
                             ),
                           ),
                         ),
@@ -134,7 +116,7 @@ class _VendedorProductosWidgetState extends State<VendedorProductosWidget> {
                                 color: Colors.transparent,
                                 width: 1,
                               ),
-                              borderRadius: 5,
+                              borderRadius: BorderRadius.circular(5),
                             ),
                           ),
                         ),
@@ -183,14 +165,15 @@ class _VendedorProductosWidgetState extends State<VendedorProductosWidget> {
                     children: [
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: DashboardWidget(),
-                            ),
+                          context.pushNamed(
+                            'Dashboard',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
                           );
                         },
                         child: ListTile(
@@ -212,14 +195,15 @@ class _VendedorProductosWidgetState extends State<VendedorProductosWidget> {
                       ),
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: PedidosWidget(),
-                            ),
+                          context.pushNamed(
+                            'PEDIDOS',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
                           );
                         },
                         child: ListTile(
@@ -242,15 +226,7 @@ class _VendedorProductosWidgetState extends State<VendedorProductosWidget> {
                       ),
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: CotizacionePendientesWidget(),
-                            ),
-                          );
+                          context.pushNamed('CotizacionePendientes');
                         },
                         child: ListTile(
                           leading: Icon(
@@ -272,14 +248,15 @@ class _VendedorProductosWidgetState extends State<VendedorProductosWidget> {
                       ),
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: FinanzastodaslascomprasWidget(),
-                            ),
+                          context.pushNamed(
+                            'Finanzastodaslascompras',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
                           );
                         },
                         child: ListTile(
@@ -301,14 +278,15 @@ class _VendedorProductosWidgetState extends State<VendedorProductosWidget> {
                       ),
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: ProductosWidget(),
-                            ),
+                          context.pushNamed(
+                            'Productos',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
                           );
                         },
                         child: ListTile(
@@ -336,14 +314,15 @@ class _VendedorProductosWidgetState extends State<VendedorProductosWidget> {
                         ),
                         child: InkWell(
                           onTap: () async {
-                            await Navigator.push(
-                              context,
-                              PageTransition(
-                                type: PageTransitionType.fade,
-                                duration: Duration(milliseconds: 0),
-                                reverseDuration: Duration(milliseconds: 0),
-                                child: VendedoresRegistradosWidget(),
-                              ),
+                            context.pushNamed(
+                              'VendedoresRegistrados',
+                              extra: <String, dynamic>{
+                                kTransitionInfoKey: TransitionInfo(
+                                  hasTransition: true,
+                                  transitionType: PageTransitionType.fade,
+                                  duration: Duration(milliseconds: 0),
+                                ),
+                              },
                             );
                           },
                           child: ListTile(
@@ -368,14 +347,15 @@ class _VendedorProductosWidgetState extends State<VendedorProductosWidget> {
                       ),
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: RepartidoresRegistradosWidget(),
-                            ),
+                          context.pushNamed(
+                            'RepartidoresRegistrados',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
                           );
                         },
                         child: ListTile(
@@ -398,14 +378,15 @@ class _VendedorProductosWidgetState extends State<VendedorProductosWidget> {
                       ),
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: UsuariosWidget(),
-                            ),
+                          context.pushNamed(
+                            'Usuarios',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
                           );
                         },
                         child: ListTile(
@@ -428,15 +409,7 @@ class _VendedorProductosWidgetState extends State<VendedorProductosWidget> {
                       ),
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: RegistroWebWidget(),
-                            ),
-                          );
+                          context.pushNamed('RegistroWeb');
                         },
                         child: ListTile(
                           leading: Icon(
@@ -458,14 +431,15 @@ class _VendedorProductosWidgetState extends State<VendedorProductosWidget> {
                       ),
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: PromocionesWidget(),
-                            ),
+                          context.pushNamed(
+                            'Promociones',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
                           );
                         },
                         child: ListTile(
@@ -505,14 +479,15 @@ class _VendedorProductosWidgetState extends State<VendedorProductosWidget> {
                       ),
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: AjustesWidget(),
-                            ),
+                          context.pushNamed(
+                            'Ajustes',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
                           );
                         },
                         child: ListTile(
@@ -550,15 +525,7 @@ class _VendedorProductosWidgetState extends State<VendedorProductosWidget> {
                       children: [
                         FFButtonWidget(
                           onPressed: () async {
-                            await Navigator.push(
-                              context,
-                              PageTransition(
-                                type: PageTransitionType.fade,
-                                duration: Duration(milliseconds: 0),
-                                reverseDuration: Duration(milliseconds: 0),
-                                child: VendedoresRegistradosWidget(),
-                              ),
-                            );
+                            context.pushNamed('VendedoresRegistrados');
                           },
                           text: 'Volver',
                           icon: Icon(
@@ -581,7 +548,7 @@ class _VendedorProductosWidgetState extends State<VendedorProductosWidget> {
                               color: Colors.transparent,
                               width: 1,
                             ),
-                            borderRadius: 12,
+                            borderRadius: BorderRadius.circular(12),
                           ),
                         ),
                         Container(
@@ -601,14 +568,15 @@ class _VendedorProductosWidgetState extends State<VendedorProductosWidget> {
                           ),
                           child: FFButtonWidget(
                             onPressed: () async {
-                              await Navigator.push(
-                                context,
-                                PageTransition(
-                                  type: PageTransitionType.fade,
-                                  duration: Duration(milliseconds: 0),
-                                  reverseDuration: Duration(milliseconds: 0),
-                                  child: VendedorDetallesWidget(),
-                                ),
+                              context.pushNamed(
+                                'VendedorDetalles',
+                                extra: <String, dynamic>{
+                                  kTransitionInfoKey: TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType: PageTransitionType.fade,
+                                    duration: Duration(milliseconds: 0),
+                                  ),
+                                },
                               );
                             },
                             text: 'Detalles',
@@ -629,7 +597,7 @@ class _VendedorProductosWidgetState extends State<VendedorProductosWidget> {
                                 color: Colors.transparent,
                                 width: 1,
                               ),
-                              borderRadius: 12,
+                              borderRadius: BorderRadius.circular(12),
                             ),
                           ),
                         ),
@@ -652,15 +620,7 @@ class _VendedorProductosWidgetState extends State<VendedorProductosWidget> {
                             ),
                             child: FFButtonWidget(
                               onPressed: () async {
-                                await Navigator.push(
-                                  context,
-                                  PageTransition(
-                                    type: PageTransitionType.fade,
-                                    duration: Duration(milliseconds: 0),
-                                    reverseDuration: Duration(milliseconds: 0),
-                                    child: VendedorProductosWidget(),
-                                  ),
-                                );
+                                context.pushNamed('VendedorProductos');
                               },
                               text: 'Productos',
                               options: FFButtonOptions(
@@ -681,7 +641,7 @@ class _VendedorProductosWidgetState extends State<VendedorProductosWidget> {
                                   color: Colors.transparent,
                                   width: 1,
                                 ),
-                                borderRadius: 12,
+                                borderRadius: BorderRadius.circular(12),
                               ),
                             ),
                           ),
@@ -705,15 +665,7 @@ class _VendedorProductosWidgetState extends State<VendedorProductosWidget> {
                             ),
                             child: FFButtonWidget(
                               onPressed: () async {
-                                await Navigator.push(
-                                  context,
-                                  PageTransition(
-                                    type: PageTransitionType.fade,
-                                    duration: Duration(milliseconds: 0),
-                                    reverseDuration: Duration(milliseconds: 0),
-                                    child: VendedordatosbancariosWidget(),
-                                  ),
-                                );
+                                context.pushNamed('Vendedordatosbancarios');
                               },
                               text: 'Datos Bancarios',
                               options: FFButtonOptions(
@@ -733,7 +685,7 @@ class _VendedorProductosWidgetState extends State<VendedorProductosWidget> {
                                   color: Colors.transparent,
                                   width: 1,
                                 ),
-                                borderRadius: 12,
+                                borderRadius: BorderRadius.circular(12),
                               ),
                             ),
                           ),
@@ -757,15 +709,7 @@ class _VendedorProductosWidgetState extends State<VendedorProductosWidget> {
                             ),
                             child: FFButtonWidget(
                               onPressed: () async {
-                                await Navigator.push(
-                                  context,
-                                  PageTransition(
-                                    type: PageTransitionType.fade,
-                                    duration: Duration(milliseconds: 0),
-                                    reverseDuration: Duration(milliseconds: 0),
-                                    child: VendedorDocumentosWidget(),
-                                  ),
-                                );
+                                context.pushNamed('VendedorDocumentos');
                               },
                               text: 'Documentos',
                               options: FFButtonOptions(
@@ -785,7 +729,7 @@ class _VendedorProductosWidgetState extends State<VendedorProductosWidget> {
                                   color: Colors.transparent,
                                   width: 1,
                                 ),
-                                borderRadius: 12,
+                                borderRadius: BorderRadius.circular(12),
                               ),
                             ),
                           ),
@@ -794,15 +738,7 @@ class _VendedorProductosWidgetState extends State<VendedorProductosWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                           child: InkWell(
                             onTap: () async {
-                              await Navigator.push(
-                                context,
-                                PageTransition(
-                                  type: PageTransitionType.fade,
-                                  duration: Duration(milliseconds: 0),
-                                  reverseDuration: Duration(milliseconds: 0),
-                                  child: VendedorPagosWidget(),
-                                ),
-                              );
+                              context.pushNamed('VendedorPagos');
                             },
                             child: Container(
                               width: 150,
@@ -822,16 +758,7 @@ class _VendedorProductosWidgetState extends State<VendedorProductosWidget> {
                               ),
                               child: FFButtonWidget(
                                 onPressed: () async {
-                                  await Navigator.push(
-                                    context,
-                                    PageTransition(
-                                      type: PageTransitionType.fade,
-                                      duration: Duration(milliseconds: 0),
-                                      reverseDuration:
-                                          Duration(milliseconds: 0),
-                                      child: VendedorPagosWidget(),
-                                    ),
-                                  );
+                                  context.pushNamed('VendedorPagos');
                                 },
                                 text: 'Informe de ventas',
                                 options: FFButtonOptions(
@@ -852,7 +779,7 @@ class _VendedorProductosWidgetState extends State<VendedorProductosWidget> {
                                     color: Colors.transparent,
                                     width: 1,
                                   ),
-                                  borderRadius: 12,
+                                  borderRadius: BorderRadius.circular(12),
                                 ),
                               ),
                             ),
@@ -877,14 +804,15 @@ class _VendedorProductosWidgetState extends State<VendedorProductosWidget> {
                             ),
                             child: FFButtonWidget(
                               onPressed: () async {
-                                await Navigator.push(
-                                  context,
-                                  PageTransition(
-                                    type: PageTransitionType.fade,
-                                    duration: Duration(milliseconds: 0),
-                                    reverseDuration: Duration(milliseconds: 0),
-                                    child: VendedorComprasWidget(),
-                                  ),
+                                context.pushNamed(
+                                  'VendedorCompras',
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType: PageTransitionType.fade,
+                                      duration: Duration(milliseconds: 0),
+                                    ),
+                                  },
                                 );
                               },
                               text: 'Compras',
@@ -906,7 +834,7 @@ class _VendedorProductosWidgetState extends State<VendedorProductosWidget> {
                                   color: Colors.transparent,
                                   width: 1,
                                 ),
-                                borderRadius: 12,
+                                borderRadius: BorderRadius.circular(12),
                               ),
                             ),
                           ),
@@ -1058,17 +986,18 @@ class _VendedorProductosWidgetState extends State<VendedorProductosWidget> {
                                         children: [
                                           InkWell(
                                             onTap: () async {
-                                              await Navigator.push(
-                                                context,
-                                                PageTransition(
-                                                  type: PageTransitionType.fade,
-                                                  duration:
-                                                      Duration(milliseconds: 0),
-                                                  reverseDuration:
-                                                      Duration(milliseconds: 0),
-                                                  child:
-                                                      VendedorProductosWidget(),
-                                                ),
+                                              context.pushNamed(
+                                                'VendedorProductos',
+                                                extra: <String, dynamic>{
+                                                  kTransitionInfoKey:
+                                                      TransitionInfo(
+                                                    hasTransition: true,
+                                                    transitionType:
+                                                        PageTransitionType.fade,
+                                                    duration: Duration(
+                                                        milliseconds: 0),
+                                                  ),
+                                                },
                                               );
                                             },
                                             child: Text(
@@ -1113,17 +1042,18 @@ class _VendedorProductosWidgetState extends State<VendedorProductosWidget> {
                                         children: [
                                           InkWell(
                                             onTap: () async {
-                                              await Navigator.push(
-                                                context,
-                                                PageTransition(
-                                                  type: PageTransitionType.fade,
-                                                  duration:
-                                                      Duration(milliseconds: 0),
-                                                  reverseDuration:
-                                                      Duration(milliseconds: 0),
-                                                  child:
-                                                      VendedorProductosCategoriasWidget(),
-                                                ),
+                                              context.pushNamed(
+                                                'VendedorProductosCategorias',
+                                                extra: <String, dynamic>{
+                                                  kTransitionInfoKey:
+                                                      TransitionInfo(
+                                                    hasTransition: true,
+                                                    transitionType:
+                                                        PageTransitionType.fade,
+                                                    duration: Duration(
+                                                        milliseconds: 0),
+                                                  ),
+                                                },
                                               );
                                             },
                                             child: Text(
@@ -1166,17 +1096,18 @@ class _VendedorProductosWidgetState extends State<VendedorProductosWidget> {
                                         children: [
                                           InkWell(
                                             onTap: () async {
-                                              await Navigator.push(
-                                                context,
-                                                PageTransition(
-                                                  type: PageTransitionType.fade,
-                                                  duration:
-                                                      Duration(milliseconds: 0),
-                                                  reverseDuration:
-                                                      Duration(milliseconds: 0),
-                                                  child:
-                                                      VendedorProductosMarcasWidget(),
-                                                ),
+                                              context.pushNamed(
+                                                'VendedorProductosMarcas',
+                                                extra: <String, dynamic>{
+                                                  kTransitionInfoKey:
+                                                      TransitionInfo(
+                                                    hasTransition: true,
+                                                    transitionType:
+                                                        PageTransitionType.fade,
+                                                    duration: Duration(
+                                                        milliseconds: 0),
+                                                  ),
+                                                },
                                               );
                                             },
                                             child: Text(
@@ -1399,7 +1330,9 @@ class _VendedorProductosWidgetState extends State<VendedorProductosWidget> {
                                                             Colors.transparent,
                                                         width: 1,
                                                       ),
-                                                      borderRadius: 5,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              5),
                                                     ),
                                                   ),
                                                   Padding(
@@ -1439,7 +1372,9 @@ class _VendedorProductosWidgetState extends State<VendedorProductosWidget> {
                                                               .transparent,
                                                           width: 1,
                                                         ),
-                                                        borderRadius: 5,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(5),
                                                       ),
                                                     ),
                                                   ),

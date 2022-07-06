@@ -1,22 +1,9 @@
-import '../ajustes/ajustes_widget.dart';
-import '../anadir_repartidor/anadir_repartidor_widget.dart';
 import '../components/logo_completo_widget.dart';
 import '../components/notifications_widget.dart';
-import '../cotizacione_pendientes/cotizacione_pendientes_widget.dart';
-import '../crear_vendedor_detalles/crear_vendedor_detalles_widget.dart';
-import '../dashboard/dashboard_widget.dart';
-import '../finanzastodaslascompras/finanzastodaslascompras_widget.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../pedidos/pedidos_widget.dart';
-import '../productos/productos_widget.dart';
-import '../promociones/promociones_widget.dart';
-import '../repartidores_registrados/repartidores_registrados_widget.dart';
-import '../usuario/usuario_widget.dart';
-import '../usuarios/usuarios_widget.dart';
-import '../vendedores_registrados/vendedores_registrados_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -204,14 +191,15 @@ class _RegistroWebWidgetState extends State<RegistroWebWidget> {
                     children: [
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: DashboardWidget(),
-                            ),
+                          context.pushNamed(
+                            'Dashboard',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
                           );
                         },
                         child: ListTile(
@@ -233,14 +221,15 @@ class _RegistroWebWidgetState extends State<RegistroWebWidget> {
                       ),
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: PedidosWidget(),
-                            ),
+                          context.pushNamed(
+                            'PEDIDOS',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
                           );
                         },
                         child: ListTile(
@@ -263,15 +252,7 @@ class _RegistroWebWidgetState extends State<RegistroWebWidget> {
                       ),
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: CotizacionePendientesWidget(),
-                            ),
-                          );
+                          context.pushNamed('CotizacionePendientes');
                         },
                         child: ListTile(
                           leading: Icon(
@@ -293,14 +274,15 @@ class _RegistroWebWidgetState extends State<RegistroWebWidget> {
                       ),
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: FinanzastodaslascomprasWidget(),
-                            ),
+                          context.pushNamed(
+                            'Finanzastodaslascompras',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
                           );
                         },
                         child: ListTile(
@@ -322,14 +304,15 @@ class _RegistroWebWidgetState extends State<RegistroWebWidget> {
                       ),
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: ProductosWidget(),
-                            ),
+                          context.pushNamed(
+                            'Productos',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
                           );
                         },
                         child: ListTile(
@@ -352,14 +335,15 @@ class _RegistroWebWidgetState extends State<RegistroWebWidget> {
                       ),
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: VendedoresRegistradosWidget(),
-                            ),
+                          context.pushNamed(
+                            'VendedoresRegistrados',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
                           );
                         },
                         child: ListTile(
@@ -382,14 +366,15 @@ class _RegistroWebWidgetState extends State<RegistroWebWidget> {
                       ),
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: RepartidoresRegistradosWidget(),
-                            ),
+                          context.pushNamed(
+                            'RepartidoresRegistrados',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
                           );
                         },
                         child: ListTile(
@@ -412,14 +397,15 @@ class _RegistroWebWidgetState extends State<RegistroWebWidget> {
                       ),
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: UsuariosWidget(),
-                            ),
+                          context.pushNamed(
+                            'Usuarios',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
                           );
                         },
                         child: ListTile(
@@ -447,15 +433,7 @@ class _RegistroWebWidgetState extends State<RegistroWebWidget> {
                         ),
                         child: InkWell(
                           onTap: () async {
-                            await Navigator.push(
-                              context,
-                              PageTransition(
-                                type: PageTransitionType.fade,
-                                duration: Duration(milliseconds: 0),
-                                reverseDuration: Duration(milliseconds: 0),
-                                child: RegistroWebWidget(),
-                              ),
-                            );
+                            context.pushNamed('RegistroWeb');
                           },
                           child: ListTile(
                             leading: Icon(
@@ -479,14 +457,15 @@ class _RegistroWebWidgetState extends State<RegistroWebWidget> {
                       ),
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: PromocionesWidget(),
-                            ),
+                          context.pushNamed(
+                            'Promociones',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
                           );
                         },
                         child: ListTile(
@@ -526,14 +505,15 @@ class _RegistroWebWidgetState extends State<RegistroWebWidget> {
                       ),
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: AjustesWidget(),
-                            ),
+                          context.pushNamed(
+                            'Ajustes',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
                           );
                         },
                         child: ListTile(
@@ -576,14 +556,15 @@ class _RegistroWebWidgetState extends State<RegistroWebWidget> {
                           children: [
                             InkWell(
                               onTap: () async {
-                                await Navigator.push(
-                                  context,
-                                  PageTransition(
-                                    type: PageTransitionType.fade,
-                                    duration: Duration(milliseconds: 0),
-                                    reverseDuration: Duration(milliseconds: 0),
-                                    child: RepartidoresRegistradosWidget(),
-                                  ),
+                                context.pushNamed(
+                                  'RepartidoresRegistrados',
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType: PageTransitionType.fade,
+                                      duration: Duration(milliseconds: 0),
+                                    ),
+                                  },
                                 );
                               },
                               child: Text(
@@ -746,18 +727,8 @@ class _RegistroWebWidgetState extends State<RegistroWebWidget> {
                                           0, 0, 10, 0),
                                       child: FFButtonWidget(
                                         onPressed: () async {
-                                          await Navigator.push(
-                                            context,
-                                            PageTransition(
-                                              type: PageTransitionType.fade,
-                                              duration:
-                                                  Duration(milliseconds: 0),
-                                              reverseDuration:
-                                                  Duration(milliseconds: 0),
-                                              child:
-                                                  CrearVendedorDetallesWidget(),
-                                            ),
-                                          );
+                                          context.pushNamed(
+                                              'CrearVendedorDetalles');
                                         },
                                         text: '.csv',
                                         icon: Icon(
@@ -783,22 +754,14 @@ class _RegistroWebWidgetState extends State<RegistroWebWidget> {
                                             color: Colors.transparent,
                                             width: 1,
                                           ),
-                                          borderRadius: 5,
+                                          borderRadius:
+                                              BorderRadius.circular(5),
                                         ),
                                       ),
                                     ),
                                     FFButtonWidget(
                                       onPressed: () async {
-                                        await Navigator.push(
-                                          context,
-                                          PageTransition(
-                                            type: PageTransitionType.fade,
-                                            duration: Duration(milliseconds: 0),
-                                            reverseDuration:
-                                                Duration(milliseconds: 0),
-                                            child: AnadirRepartidorWidget(),
-                                          ),
-                                        );
+                                        context.pushNamed('AnadirRepartidor');
                                       },
                                       text: 'Enviar mensaje a todos',
                                       icon: Icon(
@@ -826,7 +789,7 @@ class _RegistroWebWidgetState extends State<RegistroWebWidget> {
                                           color: Colors.transparent,
                                           width: 1,
                                         ),
-                                        borderRadius: 5,
+                                        borderRadius: BorderRadius.circular(5),
                                       ),
                                     ),
                                   ],
@@ -1067,22 +1030,22 @@ class _RegistroWebWidgetState extends State<RegistroWebWidget> {
                                                             0, 0),
                                                     child: FFButtonWidget(
                                                       onPressed: () async {
-                                                        await Navigator.push(
-                                                          context,
-                                                          PageTransition(
-                                                            type:
-                                                                PageTransitionType
-                                                                    .fade,
-                                                            duration: Duration(
-                                                                milliseconds:
-                                                                    0),
-                                                            reverseDuration:
-                                                                Duration(
-                                                                    milliseconds:
-                                                                        0),
-                                                            child:
-                                                                UsuarioWidget(),
-                                                          ),
+                                                        context.pushNamed(
+                                                          'Usuario',
+                                                          extra: <String,
+                                                              dynamic>{
+                                                            kTransitionInfoKey:
+                                                                TransitionInfo(
+                                                              hasTransition:
+                                                                  true,
+                                                              transitionType:
+                                                                  PageTransitionType
+                                                                      .fade,
+                                                              duration: Duration(
+                                                                  milliseconds:
+                                                                      0),
+                                                            ),
+                                                          },
                                                         );
                                                       },
                                                       text: 'Enviar mensaje',
@@ -1112,7 +1075,9 @@ class _RegistroWebWidgetState extends State<RegistroWebWidget> {
                                                               .transparent,
                                                           width: 1,
                                                         ),
-                                                        borderRadius: 5,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(5),
                                                       ),
                                                     ),
                                                   ),

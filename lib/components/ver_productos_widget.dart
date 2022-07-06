@@ -234,7 +234,7 @@ class _VerProductosWidgetState extends State<VerProductosWidget> {
                             );
                             setState(() =>
                                 FFAppState().productsStoreWillSupply = []);
-                            Navigator.pop(context);
+                            context.pop();
                           },
                           text: 'Solicitar',
                           options: FFButtonOptions(
@@ -252,7 +252,7 @@ class _VerProductosWidgetState extends State<VerProductosWidget> {
                               color: Colors.transparent,
                               width: 1,
                             ),
-                            borderRadius: 5,
+                            borderRadius: BorderRadius.circular(5),
                           ),
                         ),
                       ],
