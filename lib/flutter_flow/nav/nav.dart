@@ -163,7 +163,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             ),
             FFRoute(
               name: 'AprobarVendedorDetalles',
-              path: 'vendedores/aprobar-vendedor/detalles/',
+              path: 'vendedores/aprobar-vendedor/detalles',
               requireAuth: true,
               builder: (context, params) => AprobarVendedorDetallesWidget(
                 sellerUID: params.getParam('sellerUID', ParamType.String),
