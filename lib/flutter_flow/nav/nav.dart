@@ -177,13 +177,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             ),
             FFRoute(
               name: 'VendedorDetalles',
-              path: 'vendedores/vendedor/detalles/',
+              path: 'vendedores/vendedor/detalles',
               requireAuth: true,
               builder: (context, params) => VendedorDetallesWidget(),
             ),
             FFRoute(
               name: 'VendedorPagos',
-              path: 'vendedores/vendedor/informe-de-ventas/',
+              path: 'vendedores/vendedor/informe-de-ventas',
               requireAuth: true,
               builder: (context, params) => VendedorPagosWidget(),
             ),
@@ -227,19 +227,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             ),
             FFRoute(
               name: 'Vendedordatosbancarios',
-              path: 'vendedores/vendedor/datos-bancarios/',
+              path: 'vendedores/vendedor/datos-bancarios',
               requireAuth: true,
               builder: (context, params) => VendedordatosbancariosWidget(),
             ),
             FFRoute(
               name: 'VendedorDocumentos',
-              path: 'vendedores/vendedor/documentos/',
+              path: 'vendedores/vendedor/documentos',
               requireAuth: true,
               builder: (context, params) => VendedorDocumentosWidget(),
             ),
             FFRoute(
               name: 'EditarCupon',
-              path: 'promociones/editar-cupon/',
+              path: 'promociones/editar-cupon',
               requireAuth: true,
               builder: (context, params) => EditarCuponWidget(),
             ),
@@ -275,20 +275,20 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             ),
             FFRoute(
               name: 'AprobarVendedorDatosBancarios',
-              path: 'vendedores/aprobar-vendedor/datos-bancarios/',
+              path: 'vendedores/aprobar-vendedor/datos-bancarios',
               requireAuth: true,
               builder: (context, params) =>
                   AprobarVendedorDatosBancariosWidget(),
             ),
             FFRoute(
               name: 'AprobarVendedorDocumentos',
-              path: 'vendedores/aprobar-vendedor/doducmentos/',
+              path: 'vendedores/aprobar-vendedor/documentos',
               requireAuth: true,
               builder: (context, params) => AprobarVendedorDocumentosWidget(),
             ),
             FFRoute(
               name: 'CrearVendedorDetalles',
-              path: 'vendedores/crear-vendedor/detalles/',
+              path: 'vendedores/crear-vendedor/detalles',
               requireAuth: true,
               builder: (context, params) => CrearVendedorDetallesWidget(),
             ),
@@ -480,7 +480,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             ),
             FFRoute(
               name: 'VendedorCompras',
-              path: 'vendedores/vendedor/compras/',
+              path: 'vendedores/vendedor/compras',
               requireAuth: true,
               builder: (context, params) => VendedorComprasWidget(),
             ),
@@ -539,7 +539,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             ),
             FFRoute(
               name: 'SellerPedidoPorAceptarRECOGERENTIENDA',
-              path: 'pedidos/seller/por-aceptar/recoger-en-tienda/',
+              path: 'pedidos/seller/por-aceptar/recoger-en-tienda',
               requireAuth: true,
               builder: (context, params) =>
                   SellerPedidoPorAceptarRECOGERENTIENDAWidget(
@@ -550,7 +550,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             ),
             FFRoute(
               name: 'SellerPedidoEnPreparacionRECOGERENTIENDA',
-              path: 'pedidos/seller/en-preparacion/recoger-en-tienda/',
+              path: 'pedidos/seller/en-preparacion/recoger-en-tienda',
               requireAuth: true,
               builder: (context, params) =>
                   SellerPedidoEnPreparacionRECOGERENTIENDAWidget(
@@ -561,7 +561,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             ),
             FFRoute(
               name: 'SellerPedidoPorEntregarRECOGERENTIENDA',
-              path: 'pedidos/seller/por-entregar/recoger-en-tienda/',
+              path: 'pedidos/seller/por-entregar/recoger-en-tienda',
               requireAuth: true,
               builder: (context, params) =>
                   SellerPedidoPorEntregarRECOGERENTIENDAWidget(
@@ -572,7 +572,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             ),
             FFRoute(
               name: 'PedidoHistorialSELLERRecogerEnTienda',
-              path: 'vendedor/informe-de-ventas/recoger-en-tienda/',
+              path: 'vendedor/informe-de-ventas/recoger-en-tienda',
               requireAuth: true,
               builder: (context, params) =>
                   PedidoHistorialSELLERRecogerEnTiendaWidget(),
