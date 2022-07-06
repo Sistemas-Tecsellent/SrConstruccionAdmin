@@ -346,3 +346,32 @@ class GetPricingRequestInfoCall {
     );
   }
 }
+
+class GetSupplierInfoFromPriceReqCall {
+  static Future<ApiCallResponse> call({
+    String storeId = '',
+    String pricingRequestId = '',
+  }) {
+    return ApiManager.instance.makeApiCall(
+      callName: 'getSupplierInfoFromPriceReq',
+      apiUrl:
+          'https://us-central1-srconstruccion-d4663.cloudfunctions.net/getSupplierInfoFromPriceReq',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'storeId': storeId,
+        'pricingRequestId': pricingRequestId,
+      },
+      returnBody: true,
+    );
+  }
+
+  static dynamic canSupplyProducts(dynamic response) => getJsonField(
+        response,
+        r'''$.canSupplyProducts''',
+      );
+  static dynamic canSupplyAmount(dynamic response) => getJsonField(
+        response,
+        r'''$.canSupplyAmount''',
+      );
+}

@@ -24,9 +24,6 @@ abstract class PricingRequestsRecord
   String get ownerName;
 
   @nullable
-  String get onwerAddress;
-
-  @nullable
   String get ownerPhone;
 
   @nullable
@@ -48,6 +45,15 @@ abstract class PricingRequestsRecord
   String get deliveryDate;
 
   @nullable
+  BuiltList<String> get totalSuppliersIds;
+
+  @nullable
+  DateTime get createdDate;
+
+  @nullable
+  String get ownerAddress;
+
+  @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference get reference;
 
@@ -57,14 +63,15 @@ abstract class PricingRequestsRecord
         ..checkoutId = ''
         ..owner = ''
         ..ownerName = ''
-        ..onwerAddress = ''
         ..ownerPhone = ''
         ..productsTotal = 0.0
         ..shipmentPrice = ''
         ..assignedTo = ''
         ..deliveryTime = ''
         ..active = false
-        ..deliveryDate = '';
+        ..deliveryDate = ''
+        ..totalSuppliersIds = ListBuilder()
+        ..ownerAddress = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('pricingRequests');
@@ -93,7 +100,6 @@ Map<String, dynamic> createPricingRequestsRecordData({
   String checkoutId,
   String owner,
   String ownerName,
-  String onwerAddress,
   String ownerPhone,
   double productsTotal,
   String shipmentPrice,
@@ -101,6 +107,8 @@ Map<String, dynamic> createPricingRequestsRecordData({
   String deliveryTime,
   bool active,
   String deliveryDate,
+  DateTime createdDate,
+  String ownerAddress,
 }) =>
     serializers.toFirestore(
         PricingRequestsRecord.serializer,
@@ -109,11 +117,13 @@ Map<String, dynamic> createPricingRequestsRecordData({
           ..checkoutId = checkoutId
           ..owner = owner
           ..ownerName = ownerName
-          ..onwerAddress = onwerAddress
           ..ownerPhone = ownerPhone
           ..productsTotal = productsTotal
           ..shipmentPrice = shipmentPrice
           ..assignedTo = assignedTo
           ..deliveryTime = deliveryTime
           ..active = active
-          ..deliveryDate = deliveryDate));
+          ..deliveryDate = deliveryDate
+          ..totalSuppliersIds = null
+          ..createdDate = createdDate
+          ..ownerAddress = ownerAddress));

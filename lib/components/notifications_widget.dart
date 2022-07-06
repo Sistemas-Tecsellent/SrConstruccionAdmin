@@ -1,7 +1,6 @@
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
-import '../notificaciones/notificaciones_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -18,14 +17,15 @@ class _NotificationsWidgetState extends State<NotificationsWidget> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () async {
-        await Navigator.push(
-          context,
-          PageTransition(
-            type: PageTransitionType.fade,
-            duration: Duration(milliseconds: 0),
-            reverseDuration: Duration(milliseconds: 0),
-            child: NotificacionesWidget(),
-          ),
+        context.pushNamed(
+          'Notificaciones',
+          extra: <String, dynamic>{
+            kTransitionInfoKey: TransitionInfo(
+              hasTransition: true,
+              transitionType: PageTransitionType.fade,
+              duration: Duration(milliseconds: 0),
+            ),
+          },
         );
       },
       child: Stack(
@@ -42,14 +42,15 @@ class _NotificationsWidgetState extends State<NotificationsWidget> {
               size: 38,
             ),
             onPressed: () async {
-              await Navigator.push(
-                context,
-                PageTransition(
-                  type: PageTransitionType.fade,
-                  duration: Duration(milliseconds: 0),
-                  reverseDuration: Duration(milliseconds: 0),
-                  child: NotificacionesWidget(),
-                ),
+              context.pushNamed(
+                'Notificaciones',
+                extra: <String, dynamic>{
+                  kTransitionInfoKey: TransitionInfo(
+                    hasTransition: true,
+                    transitionType: PageTransitionType.fade,
+                    duration: Duration(milliseconds: 0),
+                  ),
+                },
               );
             },
           ),

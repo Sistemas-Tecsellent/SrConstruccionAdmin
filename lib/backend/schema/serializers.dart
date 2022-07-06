@@ -12,6 +12,7 @@ import 'admins_record.dart';
 import 'users_record.dart';
 import 'sellers_record.dart';
 import 'pricing_requests_record.dart';
+import 'admin_pricing_requests_for_stores_record.dart';
 
 import 'index.dart';
 
@@ -34,6 +35,7 @@ const kDocumentReferenceField = 'Document__Reference__Field';
   UsersRecord,
   SellersRecord,
   PricingRequestsRecord,
+  AdminPricingRequestsForStoresRecord,
 ])
 final Serializers serializers = (_$serializers.toBuilder()
       ..add(DocumentReferenceSerializer())

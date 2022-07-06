@@ -1,4 +1,3 @@
-import '../dashboard/dashboard_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -19,14 +18,15 @@ class _LogoCompletoWidgetState extends State<LogoCompletoWidget> {
       padding: EdgeInsetsDirectional.fromSTEB(25, 0, 0, 0),
       child: InkWell(
         onTap: () async {
-          await Navigator.push(
-            context,
-            PageTransition(
-              type: PageTransitionType.fade,
-              duration: Duration(milliseconds: 0),
-              reverseDuration: Duration(milliseconds: 0),
-              child: DashboardWidget(),
-            ),
+          context.pushNamed(
+            'Dashboard',
+            extra: <String, dynamic>{
+              kTransitionInfoKey: TransitionInfo(
+                hasTransition: true,
+                transitionType: PageTransitionType.fade,
+                duration: Duration(milliseconds: 0),
+              ),
+            },
           );
         },
         child: Image.asset(

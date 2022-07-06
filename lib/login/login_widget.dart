@@ -1,6 +1,5 @@
 import '../auth/auth_util.dart';
 import '../backend/api_requests/api_calls.dart';
-import '../dashboard/dashboard_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
@@ -315,6 +314,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                 (isAdmin?.jsonBody ?? ''),
                                                 r'''$.response''',
                                               )) {
+                                                GoRouter.of(context)
+                                                    .prepareAuthEvent();
+
                                                 final user =
                                                     await signInWithEmail(
                                                   context,
@@ -326,18 +328,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                   return;
                                                 }
 
-                                                await Navigator.push(
-                                                  context,
-                                                  PageTransition(
-                                                    type:
-                                                        PageTransitionType.fade,
-                                                    duration: Duration(
-                                                        milliseconds: 0),
-                                                    reverseDuration: Duration(
-                                                        milliseconds: 0),
-                                                    child: DashboardWidget(),
-                                                  ),
-                                                );
+                                                context.pushNamedAuth(
+                                                    'Dashboard', mounted);
                                               } else {
                                                 await showDialog(
                                                   context: context,
@@ -385,7 +377,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                 color: Colors.transparent,
                                                 width: 1,
                                               ),
-                                              borderRadius: 8,
+                                              borderRadius:
+                                                  BorderRadius.circular(8),
                                             ),
                                           ),
                                         ),
@@ -419,7 +412,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                 color: Colors.transparent,
                                                 width: 1,
                                               ),
-                                              borderRadius: 8,
+                                              borderRadius:
+                                                  BorderRadius.circular(8),
                                             ),
                                           ),
                                         ),
@@ -465,6 +459,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                             children: [
                                               InkWell(
                                                 onTap: () async {
+                                                  GoRouter.of(context)
+                                                      .prepareAuthEvent();
                                                   final user =
                                                       await signInWithGoogle(
                                                           context);
@@ -480,21 +476,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                     (isAdminG?.jsonBody ?? ''),
                                                     r'''$.response''',
                                                   )) {
-                                                    await Navigator.push(
-                                                      context,
-                                                      PageTransition(
-                                                        type: PageTransitionType
-                                                            .fade,
-                                                        duration: Duration(
-                                                            milliseconds: 0),
-                                                        reverseDuration:
-                                                            Duration(
-                                                                milliseconds:
-                                                                    0),
-                                                        child:
-                                                            DashboardWidget(),
-                                                      ),
-                                                    );
+                                                    context.pushNamedAuth(
+                                                        'Dashboard', mounted);
                                                   } else {
                                                     await showDialog(
                                                       context: context,
@@ -515,6 +498,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                         );
                                                       },
                                                     );
+                                                    GoRouter.of(context)
+                                                        .prepareAuthEvent();
                                                     await signOut();
                                                   }
 
@@ -550,6 +535,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                     .fromSTEB(10, 0, 0, 0),
                                                 child: InkWell(
                                                   onTap: () async {
+                                                    GoRouter.of(context)
+                                                        .prepareAuthEvent();
                                                     final user =
                                                         await signInWithFacebook(
                                                             context);
@@ -567,22 +554,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                           ''),
                                                       r'''$.response''',
                                                     )) {
-                                                      await Navigator.push(
-                                                        context,
-                                                        PageTransition(
-                                                          type:
-                                                              PageTransitionType
-                                                                  .fade,
-                                                          duration: Duration(
-                                                              milliseconds: 0),
-                                                          reverseDuration:
-                                                              Duration(
-                                                                  milliseconds:
-                                                                      0),
-                                                          child:
-                                                              DashboardWidget(),
-                                                        ),
-                                                      );
+                                                      context.pushNamedAuth(
+                                                          'Dashboard', mounted);
                                                     } else {
                                                       await showDialog(
                                                         context: context,
@@ -605,6 +578,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                           );
                                                         },
                                                       );
+                                                      GoRouter.of(context)
+                                                          .prepareAuthEvent();
                                                       await signOut();
                                                     }
 
