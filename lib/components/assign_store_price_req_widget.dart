@@ -225,13 +225,13 @@ class _AssignStorePriceReqWidgetState extends State<AssignStorePriceReqWidget> {
                         ),
                         FFButtonWidget(
                           onPressed: () async {
-                            setState(() =>
-                                FFAppState().productsStoreWillSupply = []);
                             await actions.createAdminPricingRequestForStore(
                               widget.storeId,
                               FFAppState().productsStoreWillSupply.toList(),
                               widget.pricingRequestId,
                             );
+                            setState(() =>
+                                FFAppState().productsStoreWillSupply = []);
                             context.pop();
                           },
                           text: 'Solicitar',
