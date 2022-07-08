@@ -232,7 +232,7 @@ class _AssignStorePriceReqWidgetState extends State<AssignStorePriceReqWidget> {
                             );
                             setState(() =>
                                 FFAppState().productsStoreWillSupply = []);
-                            context.pop();
+                            Navigator.pop(context);
                           },
                           text: 'Solicitar',
                           options: FFButtonOptions(
