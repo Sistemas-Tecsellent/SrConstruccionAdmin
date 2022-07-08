@@ -731,51 +731,44 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                                       height: 30,
                                                       decoration:
                                                           BoxDecoration(),
-                                                      child: InkWell(
-                                                        onTap: () async {
-                                                          context.pushNamed(
-                                                              'PedidoPorAceptar5DIASCamion');
-                                                        },
-                                                        child: Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .center,
-                                                          children: [
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          3,
-                                                                          0),
-                                                              child: Text(
-                                                                'Ir',
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyText1
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Montserrat',
-                                                                      color: Colors
-                                                                          .white,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w600,
-                                                                    ),
-                                                              ),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
+                                                        children: [
+                                                          Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0,
+                                                                        0,
+                                                                        3,
+                                                                        0),
+                                                            child: Text(
+                                                              'Ir',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyText1
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Montserrat',
+                                                                    color: Colors
+                                                                        .white,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w600,
+                                                                  ),
                                                             ),
-                                                            Icon(
-                                                              Icons
-                                                                  .arrow_forward_rounded,
-                                                              color:
-                                                                  Colors.white,
-                                                              size: 24,
-                                                            ),
-                                                          ],
-                                                        ),
+                                                          ),
+                                                          Icon(
+                                                            Icons
+                                                                .arrow_forward_rounded,
+                                                            color: Colors.white,
+                                                            size: 24,
+                                                          ),
+                                                        ],
                                                       ),
                                                     ),
                                                   ],

@@ -140,6 +140,7 @@ class _PedidoPorAceptar5DIASCamionWidgetState
                                         pedidoPorAceptar5DIASCamionPricingRequestsRecord
                                             .id,
                                   );
+                                  context.pop();
                                 },
                                 text: 'Enviar Información al cliente',
                                 icon: Icon(
@@ -2029,9 +2030,36 @@ class _PedidoPorAceptar5DIASCamionWidgetState
                                                                                 decoration: BoxDecoration(
                                                                                   color: Colors.white,
                                                                                 ),
-                                                                                child: Text(
-                                                                                  '[#Productos]',
-                                                                                  style: FlutterFlowTheme.of(context).bodyText1,
+                                                                                child: FutureBuilder<ApiCallResponse>(
+                                                                                  future: GetSupplierInfoFromPriceReqCall.call(
+                                                                                    storeId: rowStoresRecord.id,
+                                                                                    pricingRequestId: pedidoPorAceptar5DIASCamionPricingRequestsRecord.id,
+                                                                                  ),
+                                                                                  builder: (context, snapshot) {
+                                                                                    // Customize what your widget looks like when it's loading.
+                                                                                    if (!snapshot.hasData) {
+                                                                                      return Center(
+                                                                                        child: SizedBox(
+                                                                                          width: 50,
+                                                                                          height: 50,
+                                                                                          child: SpinKitCircle(
+                                                                                            color: FlutterFlowTheme.of(context).primaryColor,
+                                                                                            size: 50,
+                                                                                          ),
+                                                                                        ),
+                                                                                      );
+                                                                                    }
+                                                                                    final textGetSupplierInfoFromPriceReqResponse = snapshot.data;
+                                                                                    return Text(
+                                                                                      valueOrDefault<String>(
+                                                                                        GetSupplierInfoFromPriceReqCall.canSupplyAmount(
+                                                                                          (textGetSupplierInfoFromPriceReqResponse?.jsonBody ?? ''),
+                                                                                        ).toString(),
+                                                                                        '0',
+                                                                                      ),
+                                                                                      style: FlutterFlowTheme.of(context).bodyText1,
+                                                                                    );
+                                                                                  },
                                                                                 ),
                                                                               ),
                                                                             ],
