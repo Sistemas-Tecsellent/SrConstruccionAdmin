@@ -7,17 +7,22 @@ part of 'serializers.dart';
 // **************************************************************************
 
 Serializers _$serializers = (new Serializers().toBuilder()
+      ..add(AdminPricingRequestsForStoresRecord.serializer)
       ..add(AdminsRecord.serializer)
       ..add(DeliverersRecord.serializer)
       ..add(DeliveryOrdersRecord.serializer)
       ..add(OrderBundlesRecord.serializer)
       ..add(OrdersForClientsRecord.serializer)
       ..add(OrdersForStoresRecord.serializer)
+      ..add(PricingRequestsRecord.serializer)
       ..add(ProductsRecord.serializer)
       ..add(SellersRecord.serializer)
       ..add(StoresRecord.serializer)
       ..add(UsersRecord.serializer)
       ..add(VariantsRecord.serializer)
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())

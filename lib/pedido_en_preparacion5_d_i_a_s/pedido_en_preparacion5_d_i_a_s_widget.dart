@@ -1,23 +1,12 @@
-import '../ajustes/ajustes_widget.dart';
 import '../auth/auth_util.dart';
 import '../backend/api_requests/api_calls.dart';
 import '../backend/backend.dart';
 import '../components/logo_completo_widget.dart';
 import '../components/notifications_widget.dart';
 import '../components/ver_sellers2_widget.dart';
-import '../cotizacione_pendientes/cotizacione_pendientes_widget.dart';
-import '../dashboard/dashboard_widget.dart';
-import '../finanzastodaslascompras/finanzastodaslascompras_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../pedidos/pedidos_widget.dart';
-import '../productos/productos_widget.dart';
-import '../promociones/promociones_widget.dart';
-import '../registro_web/registro_web_widget.dart';
-import '../repartidores_registrados/repartidores_registrados_widget.dart';
-import '../usuarios/usuarios_widget.dart';
-import '../vendedores_registrados/vendedores_registrados_widget.dart';
 import '../custom_code/actions/index.dart' as actions;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
@@ -138,7 +127,7 @@ class _PedidoEnPreparacion5DIASWidgetState
                                     color: Colors.transparent,
                                     width: 1,
                                   ),
-                                  borderRadius: 5,
+                                  borderRadius: BorderRadius.circular(5),
                                 ),
                               ),
                             ),
@@ -180,7 +169,7 @@ class _PedidoEnPreparacion5DIASWidgetState
                                       color: Colors.transparent,
                                       width: 1,
                                     ),
-                                    borderRadius: 5,
+                                    borderRadius: BorderRadius.circular(5),
                                   ),
                                 ),
                               ),
@@ -257,14 +246,15 @@ class _PedidoEnPreparacion5DIASWidgetState
                         children: [
                           InkWell(
                             onTap: () async {
-                              await Navigator.push(
-                                context,
-                                PageTransition(
-                                  type: PageTransitionType.fade,
-                                  duration: Duration(milliseconds: 0),
-                                  reverseDuration: Duration(milliseconds: 0),
-                                  child: DashboardWidget(),
-                                ),
+                              context.pushNamed(
+                                'Dashboard',
+                                extra: <String, dynamic>{
+                                  kTransitionInfoKey: TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType: PageTransitionType.fade,
+                                    duration: Duration(milliseconds: 0),
+                                  ),
+                                },
                               );
                             },
                             child: ListTile(
@@ -293,14 +283,15 @@ class _PedidoEnPreparacion5DIASWidgetState
                             ),
                             child: InkWell(
                               onTap: () async {
-                                await Navigator.push(
-                                  context,
-                                  PageTransition(
-                                    type: PageTransitionType.fade,
-                                    duration: Duration(milliseconds: 0),
-                                    reverseDuration: Duration(milliseconds: 0),
-                                    child: PedidosWidget(),
-                                  ),
+                                context.pushNamed(
+                                  'PEDIDOS',
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType: PageTransitionType.fade,
+                                      duration: Duration(milliseconds: 0),
+                                    ),
+                                  },
                                 );
                               },
                               child: ListTile(
@@ -327,15 +318,7 @@ class _PedidoEnPreparacion5DIASWidgetState
                           ),
                           InkWell(
                             onTap: () async {
-                              await Navigator.push(
-                                context,
-                                PageTransition(
-                                  type: PageTransitionType.fade,
-                                  duration: Duration(milliseconds: 0),
-                                  reverseDuration: Duration(milliseconds: 0),
-                                  child: CotizacionePendientesWidget(),
-                                ),
-                              );
+                              context.pushNamed('CotizacionePendientes');
                             },
                             child: ListTile(
                               leading: Icon(
@@ -359,14 +342,15 @@ class _PedidoEnPreparacion5DIASWidgetState
                           ),
                           InkWell(
                             onTap: () async {
-                              await Navigator.push(
-                                context,
-                                PageTransition(
-                                  type: PageTransitionType.fade,
-                                  duration: Duration(milliseconds: 0),
-                                  reverseDuration: Duration(milliseconds: 0),
-                                  child: FinanzastodaslascomprasWidget(),
-                                ),
+                              context.pushNamed(
+                                'Finanzastodaslascompras',
+                                extra: <String, dynamic>{
+                                  kTransitionInfoKey: TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType: PageTransitionType.fade,
+                                    duration: Duration(milliseconds: 0),
+                                  ),
+                                },
                               );
                             },
                             child: ListTile(
@@ -390,14 +374,15 @@ class _PedidoEnPreparacion5DIASWidgetState
                           ),
                           InkWell(
                             onTap: () async {
-                              await Navigator.push(
-                                context,
-                                PageTransition(
-                                  type: PageTransitionType.fade,
-                                  duration: Duration(milliseconds: 0),
-                                  reverseDuration: Duration(milliseconds: 0),
-                                  child: ProductosWidget(),
-                                ),
+                              context.pushNamed(
+                                'Productos',
+                                extra: <String, dynamic>{
+                                  kTransitionInfoKey: TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType: PageTransitionType.fade,
+                                    duration: Duration(milliseconds: 0),
+                                  ),
+                                },
                               );
                             },
                             child: ListTile(
@@ -422,14 +407,15 @@ class _PedidoEnPreparacion5DIASWidgetState
                           ),
                           InkWell(
                             onTap: () async {
-                              await Navigator.push(
-                                context,
-                                PageTransition(
-                                  type: PageTransitionType.fade,
-                                  duration: Duration(milliseconds: 0),
-                                  reverseDuration: Duration(milliseconds: 0),
-                                  child: VendedoresRegistradosWidget(),
-                                ),
+                              context.pushNamed(
+                                'VendedoresRegistrados',
+                                extra: <String, dynamic>{
+                                  kTransitionInfoKey: TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType: PageTransitionType.fade,
+                                    duration: Duration(milliseconds: 0),
+                                  ),
+                                },
                               );
                             },
                             child: ListTile(
@@ -454,15 +440,7 @@ class _PedidoEnPreparacion5DIASWidgetState
                           ),
                           InkWell(
                             onTap: () async {
-                              await Navigator.push(
-                                context,
-                                PageTransition(
-                                  type: PageTransitionType.fade,
-                                  duration: Duration(milliseconds: 0),
-                                  reverseDuration: Duration(milliseconds: 0),
-                                  child: RepartidoresRegistradosWidget(),
-                                ),
-                              );
+                              context.pushNamed('RepartidoresRegistrados');
                             },
                             child: ListTile(
                               leading: Icon(
@@ -486,14 +464,15 @@ class _PedidoEnPreparacion5DIASWidgetState
                           ),
                           InkWell(
                             onTap: () async {
-                              await Navigator.push(
-                                context,
-                                PageTransition(
-                                  type: PageTransitionType.fade,
-                                  duration: Duration(milliseconds: 0),
-                                  reverseDuration: Duration(milliseconds: 0),
-                                  child: UsuariosWidget(),
-                                ),
+                              context.pushNamed(
+                                'Usuarios',
+                                extra: <String, dynamic>{
+                                  kTransitionInfoKey: TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType: PageTransitionType.fade,
+                                    duration: Duration(milliseconds: 0),
+                                  ),
+                                },
                               );
                             },
                             child: ListTile(
@@ -518,15 +497,7 @@ class _PedidoEnPreparacion5DIASWidgetState
                           ),
                           InkWell(
                             onTap: () async {
-                              await Navigator.push(
-                                context,
-                                PageTransition(
-                                  type: PageTransitionType.fade,
-                                  duration: Duration(milliseconds: 0),
-                                  reverseDuration: Duration(milliseconds: 0),
-                                  child: RegistroWebWidget(),
-                                ),
-                              );
+                              context.pushNamed('RegistroWeb');
                             },
                             child: ListTile(
                               leading: Icon(
@@ -550,14 +521,15 @@ class _PedidoEnPreparacion5DIASWidgetState
                           ),
                           InkWell(
                             onTap: () async {
-                              await Navigator.push(
-                                context,
-                                PageTransition(
-                                  type: PageTransitionType.fade,
-                                  duration: Duration(milliseconds: 0),
-                                  reverseDuration: Duration(milliseconds: 0),
-                                  child: PromocionesWidget(),
-                                ),
+                              context.pushNamed(
+                                'Promociones',
+                                extra: <String, dynamic>{
+                                  kTransitionInfoKey: TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType: PageTransitionType.fade,
+                                    duration: Duration(milliseconds: 0),
+                                  ),
+                                },
                               );
                             },
                             child: ListTile(
@@ -600,14 +572,15 @@ class _PedidoEnPreparacion5DIASWidgetState
                           ),
                           InkWell(
                             onTap: () async {
-                              await Navigator.push(
-                                context,
-                                PageTransition(
-                                  type: PageTransitionType.fade,
-                                  duration: Duration(milliseconds: 0),
-                                  reverseDuration: Duration(milliseconds: 0),
-                                  child: AjustesWidget(),
-                                ),
+                              context.pushNamed(
+                                'Ajustes',
+                                extra: <String, dynamic>{
+                                  kTransitionInfoKey: TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType: PageTransitionType.fade,
+                                    duration: Duration(milliseconds: 0),
+                                  ),
+                                },
                               );
                             },
                             child: ListTile(
@@ -678,7 +651,7 @@ class _PedidoEnPreparacion5DIASWidgetState
                                   children: [
                                     FFButtonWidget(
                                       onPressed: () async {
-                                        Navigator.pop(context);
+                                        context.pop();
                                       },
                                       text: 'Volver',
                                       icon: Icon(
@@ -702,119 +675,134 @@ class _PedidoEnPreparacion5DIASWidgetState
                                           color: Colors.transparent,
                                           width: 1,
                                         ),
-                                        borderRadius: 12,
+                                        borderRadius: BorderRadius.circular(12),
                                       ),
                                     ),
                                   ],
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    20, 0, 35, 20),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Row(
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                                child: Container(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.56,
+                                  decoration: BoxDecoration(),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        20, 0, 35, 20),
+                                    child: Row(
                                       mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Text(
-                                          'ID Pedido - ',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyText1
-                                              .override(
-                                                fontFamily: 'Montserrat',
-                                                fontSize: 18,
-                                                fontWeight: FontWeight.w500,
-                                              ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  5, 0, 0, 0),
-                                          child: Text(
-                                            widget.orderId,
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyText1
-                                                .override(
-                                                  fontFamily: 'Montserrat',
-                                                  fontSize: 18,
-                                                ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Text(
-                                      '1-5 DÍAS',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyText1
-                                          .override(
-                                            fontFamily: 'Montserrat',
-                                            color: FlutterFlowTheme.of(context)
-                                                .green,
-                                            fontSize: 18,
-                                            fontWeight: FontWeight.w600,
-                                            fontStyle: FontStyle.italic,
-                                          ),
-                                    ),
-                                    Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.end,
-                                      children: [
-                                        Container(
-                                          decoration: BoxDecoration(
-                                            color: Color(0x00EEEEEE),
-                                          ),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0, 0, 0, 5),
-                                            child: Text(
-                                              'PREPARACIÓN',
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Text(
+                                              'ID Pedido - ',
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyText1
                                                   .override(
                                                     fontFamily: 'Montserrat',
-                                                    color: Color(0xFF909090),
-                                                    fontSize: 14,
+                                                    fontSize: 18,
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                             ),
-                                          ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(5, 0, 0, 0),
+                                              child: Text(
+                                                widget.orderId,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyText1
+                                                        .override(
+                                                          fontFamily:
+                                                              'Montserrat',
+                                                          fontSize: 18,
+                                                        ),
+                                              ),
+                                            ),
+                                          ],
                                         ),
-                                        Container(
-                                          decoration: BoxDecoration(
-                                            color: Color(0x00EEEEEE),
-                                          ),
-                                          child: LinearPercentIndicator(
-                                            percent: 0.5,
-                                            width: 100,
-                                            lineHeight: 24,
-                                            animation: true,
-                                            progressColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .primaryColor,
-                                            backgroundColor: Color(0xFFF1F4F8),
-                                            center: Text(
-                                              '50%',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
+                                        Text(
+                                          '1-5 DÍAS',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyText1
+                                              .override(
+                                                fontFamily: 'Montserrat',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .green,
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.w600,
+                                                fontStyle: FontStyle.italic,
+                                              ),
+                                        ),
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.end,
+                                          children: [
+                                            Container(
+                                              decoration: BoxDecoration(
+                                                color: Color(0x00EEEEEE),
+                                              ),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(0, 0, 0, 5),
+                                                child: Text(
+                                                  'PREPARACIÓN',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyText1
+                                                      .override(
+                                                        fontFamily:
+                                                            'Montserrat',
+                                                        color:
+                                                            Color(0xFF909090),
+                                                        fontSize: 14,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                            Container(
+                                              decoration: BoxDecoration(
+                                                color: Color(0x00EEEEEE),
+                                              ),
+                                              child: LinearPercentIndicator(
+                                                percent: 0.5,
+                                                width: 100,
+                                                lineHeight: 24,
+                                                animation: true,
+                                                progressColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryColor,
+                                                backgroundColor:
+                                                    Color(0xFFF1F4F8),
+                                                center: Text(
+                                                  '50%',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
                                                       .bodyText1
                                                       .override(
                                                         fontFamily:
                                                             'Montserrat',
                                                         color: Colors.black,
                                                       ),
+                                                ),
+                                                padding: EdgeInsets.zero,
+                                              ),
                                             ),
-                                            padding: EdgeInsets.zero,
-                                          ),
+                                          ],
                                         ),
                                       ],
                                     ),
-                                  ],
+                                  ),
                                 ),
                               ),
                               Padding(
@@ -1309,8 +1297,6 @@ class _PedidoEnPreparacion5DIASWidgetState
                                                                           ),
                                                                         ),
                                                                         Container(
-                                                                          width:
-                                                                              100,
                                                                           decoration:
                                                                               BoxDecoration(
                                                                             color:
@@ -2441,7 +2427,7 @@ class _PedidoEnPreparacion5DIASWidgetState
                                                                                           color: Colors.transparent,
                                                                                           width: 1,
                                                                                         ),
-                                                                                        borderRadius: 5,
+                                                                                        borderRadius: BorderRadius.circular(5),
                                                                                       ),
                                                                                     ),
                                                                                   ),

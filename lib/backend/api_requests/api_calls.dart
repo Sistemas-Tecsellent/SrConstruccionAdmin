@@ -310,3 +310,68 @@ class PlaceNormalOrderCall {
     );
   }
 }
+
+class UpdatePricingRequestCall {
+  static Future<ApiCallResponse> call({
+    String requestId = '',
+  }) {
+    return ApiManager.instance.makeApiCall(
+      callName: 'updatePricingRequest',
+      apiUrl:
+          'https://us-central1-srconstruccion-d4663.cloudfunctions.net/updatePricingRequest',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'requestId': requestId,
+      },
+      returnBody: true,
+    );
+  }
+}
+
+class GetPricingRequestInfoCall {
+  static Future<ApiCallResponse> call({
+    String requestId = '',
+  }) {
+    return ApiManager.instance.makeApiCall(
+      callName: 'getPricingRequestInfo',
+      apiUrl:
+          'https://us-central1-srconstruccion-d4663.cloudfunctions.net/getPricingRequestInfo',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'requestId': requestId,
+      },
+      returnBody: true,
+    );
+  }
+}
+
+class GetSupplierInfoFromPriceReqCall {
+  static Future<ApiCallResponse> call({
+    String storeId = '',
+    String pricingRequestId = '',
+  }) {
+    return ApiManager.instance.makeApiCall(
+      callName: 'getSupplierInfoFromPriceReq',
+      apiUrl:
+          'https://us-central1-srconstruccion-d4663.cloudfunctions.net/getSupplierInfoFromPriceReq',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'storeId': storeId,
+        'pricingRequestId': pricingRequestId,
+      },
+      returnBody: true,
+    );
+  }
+
+  static dynamic canSupplyProducts(dynamic response) => getJsonField(
+        response,
+        r'''$.canSupplyProducts''',
+      );
+  static dynamic canSupplyAmount(dynamic response) => getJsonField(
+        response,
+        r'''$.canSupplyAmount''',
+      );
+}

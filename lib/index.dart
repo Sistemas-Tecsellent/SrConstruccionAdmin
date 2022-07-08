@@ -4,8 +4,6 @@ export 'finanzastodaslascompras/finanzastodaslascompras_widget.dart'
 export 'dashboard/dashboard_widget.dart' show DashboardWidget;
 export 'pedidos/pedidos_widget.dart' show PedidosWidget;
 export 'por_aceptar/por_aceptar_widget.dart' show PorAceptarWidget;
-export 'productos/productos_widget.dart' show ProductosWidget;
-export 'categorias/categorias_widget.dart' show CategoriasWidget;
 export 'notificaciones/notificaciones_widget.dart' show NotificacionesWidget;
 export 'pedido_historial/pedido_historial_widget.dart'
     show PedidoHistorialWidget;
@@ -67,12 +65,13 @@ export 'cotizaciones/cotizaciones_widget.dart' show CotizacionesWidget;
 export 'crear_vendedor_datos_bancarios/crear_vendedor_datos_bancarios_widget.dart'
     show CrearVendedorDatosBancariosWidget;
 export 'usuarios/usuarios_widget.dart' show UsuariosWidget;
+export 'productos/productos_widget.dart' show ProductosWidget;
+export 'categorias/categorias_widget.dart' show CategoriasWidget;
 export 'marcas/marcas_widget.dart' show MarcasWidget;
+export 'crear_marca/crear_marca_widget.dart' show CrearMarcaWidget;
+export 'crear_categoria/crear_categoria_widget.dart' show CrearCategoriaWidget;
 export 'pedido_por_aceptar5_d_i_a_s/pedido_por_aceptar5_d_i_a_s_widget.dart'
     show PedidoPorAceptar5DIASWidget;
-export 'crear_categoria/crear_categoria_widget.dart' show CrearCategoriaWidget;
-export 'complementos/complementos_widget.dart' show ComplementosWidget;
-export 'crear_marca/crear_marca_widget.dart' show CrearMarcaWidget;
 export 'pedido_por_entregar_e_x_p_r_e_s_s/pedido_por_entregar_e_x_p_r_e_s_s_widget.dart'
     show PedidoPorEntregarEXPRESSWidget;
 export 'pedido_por_aceptar_e_x_p_r_e_s_s/pedido_por_aceptar_e_x_p_r_e_s_s_widget.dart'
@@ -83,11 +82,9 @@ export 'crear_subcategoria/crear_subcategoria_widget.dart'
     show CrearSubcategoriaWidget;
 export 'pedido_por_entregar_e_x_p_r_e_s_s_m_a_p/pedido_por_entregar_e_x_p_r_e_s_s_m_a_p_widget.dart'
     show PedidoPorEntregarEXPRESSMAPWidget;
-export 'anadir_producto/anadir_producto_widget.dart' show AnadirProductoWidget;
 export 'pedido_en_preparacion5_d_i_a_s/pedido_en_preparacion5_d_i_a_s_widget.dart'
     show PedidoEnPreparacion5DIASWidget;
-export 'detalles_cotizacion_copy/detalles_cotizacion_copy_widget.dart'
-    show DetallesCotizacionCopyWidget;
+export 'anadir_producto/anadir_producto_widget.dart' show AnadirProductoWidget;
 export 'pedido_por_entregar5_d_i_a_s/pedido_por_entregar5_d_i_a_s_widget.dart'
     show PedidoPorEntregar5DIASWidget;
 export 'crear_vendedor_documentos/crear_vendedor_documentos_widget.dart'
@@ -97,16 +94,16 @@ export 'editar_producto/editar_producto_widget.dart' show EditarProductoWidget;
 export 'editar_servicio/editar_servicio_widget.dart' show EditarServicioWidget;
 export 'anadir_variante/anadir_variante_widget.dart' show AnadirVarianteWidget;
 export 'servicios/servicios_widget.dart' show ServiciosWidget;
+export 'coleccionesapp/coleccionesapp_widget.dart' show ColeccionesappWidget;
 export 'vendedor_compras/vendedor_compras_widget.dart'
     show VendedorComprasWidget;
 export 'usuario/usuario_widget.dart' show UsuarioWidget;
 export 'usuario_historial/usuario_historial_widget.dart'
     show UsuarioHistorialWidget;
 export 'usuario_pedidos/usuario_pedidos_widget.dart' show UsuarioPedidosWidget;
-export 'login/login_widget.dart' show LoginWidget;
 export 'editar_categoria/editar_categoria_widget.dart'
     show EditarCategoriaWidget;
-export 'coleccionesapp/coleccionesapp_widget.dart' show ColeccionesappWidget;
+export 'login/login_widget.dart' show LoginWidget;
 export 'detalles_cotizacion2/detalles_cotizacion2_widget.dart'
     show DetallesCotizacion2Widget;
 export 'detalles_cotizacion_productos/detalles_cotizacion_productos_widget.dart'
@@ -122,3 +119,5 @@ export 'seller_pedido_por_entregar_r_e_c_o_g_e_r_e_n_t_i_e_n_d_a/seller_pedido_p
     show SellerPedidoPorEntregarRECOGERENTIENDAWidget;
 export 'pedido_historial_s_e_l_l_e_r_recoger_en_tienda/pedido_historial_s_e_l_l_e_r_recoger_en_tienda_widget.dart'
     show PedidoHistorialSELLERRecogerEnTiendaWidget;
+export 'pedido_por_aceptar5_d_i_a_s_camion/pedido_por_aceptar5_d_i_a_s_camion_widget.dart'
+    show PedidoPorAceptar5DIASCamionWidget;

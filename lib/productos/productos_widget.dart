@@ -1,25 +1,9 @@
-import '../ajustes/ajustes_widget.dart';
-import '../anadir_producto/anadir_producto_widget.dart';
-import '../categorias/categorias_widget.dart';
-import '../coleccionesapp/coleccionesapp_widget.dart';
 import '../components/logo_completo_widget.dart';
 import '../components/notifications_widget.dart';
-import '../cotizacione_pendientes/cotizacione_pendientes_widget.dart';
-import '../dashboard/dashboard_widget.dart';
-import '../editar_producto/editar_producto_widget.dart';
-import '../finanzastodaslascompras/finanzastodaslascompras_widget.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../marcas/marcas_widget.dart';
-import '../pedidos/pedidos_widget.dart';
-import '../promociones/promociones_widget.dart';
-import '../registro_web/registro_web_widget.dart';
-import '../repartidores_registrados/repartidores_registrados_widget.dart';
-import '../servicios/servicios_widget.dart';
-import '../usuarios/usuarios_widget.dart';
-import '../vendedores_registrados/vendedores_registrados_widget.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
@@ -207,14 +191,15 @@ class _ProductosWidgetState extends State<ProductosWidget> {
                     children: [
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: DashboardWidget(),
-                            ),
+                          context.pushNamed(
+                            'Dashboard',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
                           );
                         },
                         child: ListTile(
@@ -236,14 +221,15 @@ class _ProductosWidgetState extends State<ProductosWidget> {
                       ),
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: PedidosWidget(),
-                            ),
+                          context.pushNamed(
+                            'PEDIDOS',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
                           );
                         },
                         child: ListTile(
@@ -266,15 +252,7 @@ class _ProductosWidgetState extends State<ProductosWidget> {
                       ),
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: CotizacionePendientesWidget(),
-                            ),
-                          );
+                          context.pushNamed('CotizacionePendientes');
                         },
                         child: ListTile(
                           leading: Icon(
@@ -296,14 +274,15 @@ class _ProductosWidgetState extends State<ProductosWidget> {
                       ),
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: FinanzastodaslascomprasWidget(),
-                            ),
+                          context.pushNamed(
+                            'Finanzastodaslascompras',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
                           );
                         },
                         child: ListTile(
@@ -330,14 +309,15 @@ class _ProductosWidgetState extends State<ProductosWidget> {
                         ),
                         child: InkWell(
                           onTap: () async {
-                            await Navigator.push(
-                              context,
-                              PageTransition(
-                                type: PageTransitionType.fade,
-                                duration: Duration(milliseconds: 0),
-                                reverseDuration: Duration(milliseconds: 0),
-                                child: ProductosWidget(),
-                              ),
+                            context.pushNamed(
+                              'Productos',
+                              extra: <String, dynamic>{
+                                kTransitionInfoKey: TransitionInfo(
+                                  hasTransition: true,
+                                  transitionType: PageTransitionType.fade,
+                                  duration: Duration(milliseconds: 0),
+                                ),
+                              },
                             );
                           },
                           child: ListTile(
@@ -362,14 +342,15 @@ class _ProductosWidgetState extends State<ProductosWidget> {
                       ),
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: VendedoresRegistradosWidget(),
-                            ),
+                          context.pushNamed(
+                            'VendedoresRegistrados',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
                           );
                         },
                         child: ListTile(
@@ -392,14 +373,15 @@ class _ProductosWidgetState extends State<ProductosWidget> {
                       ),
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: RepartidoresRegistradosWidget(),
-                            ),
+                          context.pushNamed(
+                            'RepartidoresRegistrados',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
                           );
                         },
                         child: ListTile(
@@ -422,14 +404,15 @@ class _ProductosWidgetState extends State<ProductosWidget> {
                       ),
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: UsuariosWidget(),
-                            ),
+                          context.pushNamed(
+                            'Usuarios',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
                           );
                         },
                         child: ListTile(
@@ -452,15 +435,7 @@ class _ProductosWidgetState extends State<ProductosWidget> {
                       ),
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: RegistroWebWidget(),
-                            ),
-                          );
+                          context.pushNamed('RegistroWeb');
                         },
                         child: ListTile(
                           leading: Icon(
@@ -482,14 +457,15 @@ class _ProductosWidgetState extends State<ProductosWidget> {
                       ),
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: PromocionesWidget(),
-                            ),
+                          context.pushNamed(
+                            'Promociones',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
                           );
                         },
                         child: ListTile(
@@ -529,14 +505,15 @@ class _ProductosWidgetState extends State<ProductosWidget> {
                       ),
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: AjustesWidget(),
-                            ),
+                          context.pushNamed(
+                            'Ajustes',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
                           );
                         },
                         child: ListTile(
@@ -579,14 +556,15 @@ class _ProductosWidgetState extends State<ProductosWidget> {
                           children: [
                             InkWell(
                               onTap: () async {
-                                await Navigator.push(
-                                  context,
-                                  PageTransition(
-                                    type: PageTransitionType.fade,
-                                    duration: Duration(milliseconds: 0),
-                                    reverseDuration: Duration(milliseconds: 0),
-                                    child: ProductosWidget(),
-                                  ),
+                                context.pushNamed(
+                                  'Productos',
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType: PageTransitionType.fade,
+                                      duration: Duration(milliseconds: 0),
+                                    ),
+                                  },
                                 );
                               },
                               child: Text(
@@ -625,14 +603,15 @@ class _ProductosWidgetState extends State<ProductosWidget> {
                           children: [
                             InkWell(
                               onTap: () async {
-                                await Navigator.push(
-                                  context,
-                                  PageTransition(
-                                    type: PageTransitionType.fade,
-                                    duration: Duration(milliseconds: 0),
-                                    reverseDuration: Duration(milliseconds: 0),
-                                    child: CategoriasWidget(),
-                                  ),
+                                context.pushNamed(
+                                  'Categorias',
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType: PageTransitionType.fade,
+                                      duration: Duration(milliseconds: 0),
+                                    ),
+                                  },
                                 );
                               },
                               child: Text(
@@ -670,14 +649,15 @@ class _ProductosWidgetState extends State<ProductosWidget> {
                           children: [
                             InkWell(
                               onTap: () async {
-                                await Navigator.push(
-                                  context,
-                                  PageTransition(
-                                    type: PageTransitionType.fade,
-                                    duration: Duration(milliseconds: 0),
-                                    reverseDuration: Duration(milliseconds: 0),
-                                    child: MarcasWidget(),
-                                  ),
+                                context.pushNamed(
+                                  'Marcas',
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType: PageTransitionType.fade,
+                                      duration: Duration(milliseconds: 0),
+                                    ),
+                                  },
                                 );
                               },
                               child: Text(
@@ -715,14 +695,15 @@ class _ProductosWidgetState extends State<ProductosWidget> {
                           children: [
                             InkWell(
                               onTap: () async {
-                                await Navigator.push(
-                                  context,
-                                  PageTransition(
-                                    type: PageTransitionType.fade,
-                                    duration: Duration(milliseconds: 0),
-                                    reverseDuration: Duration(milliseconds: 0),
-                                    child: ServiciosWidget(),
-                                  ),
+                                context.pushNamed(
+                                  'Servicios',
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType: PageTransitionType.fade,
+                                      duration: Duration(milliseconds: 0),
+                                    ),
+                                  },
                                 );
                               },
                               child: Text(
@@ -759,14 +740,15 @@ class _ProductosWidgetState extends State<ProductosWidget> {
                           children: [
                             InkWell(
                               onTap: () async {
-                                await Navigator.push(
-                                  context,
-                                  PageTransition(
-                                    type: PageTransitionType.fade,
-                                    duration: Duration(milliseconds: 0),
-                                    reverseDuration: Duration(milliseconds: 0),
-                                    child: ColeccionesappWidget(),
-                                  ),
+                                context.pushNamed(
+                                  'Coleccionesapp',
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType: PageTransitionType.fade,
+                                      duration: Duration(milliseconds: 0),
+                                    ),
+                                  },
                                 );
                               },
                               child: Text(
@@ -1126,22 +1108,14 @@ class _ProductosWidgetState extends State<ProductosWidget> {
                                             color: Colors.transparent,
                                             width: 1,
                                           ),
-                                          borderRadius: 5,
+                                          borderRadius:
+                                              BorderRadius.circular(5),
                                         ),
                                       ),
                                     ),
                                     FFButtonWidget(
                                       onPressed: () async {
-                                        await Navigator.push(
-                                          context,
-                                          PageTransition(
-                                            type: PageTransitionType.fade,
-                                            duration: Duration(milliseconds: 0),
-                                            reverseDuration:
-                                                Duration(milliseconds: 0),
-                                            child: AnadirProductoWidget(),
-                                          ),
-                                        );
+                                        context.pushNamed('AnadirProducto');
                                       },
                                       text: 'Añadir Producto',
                                       icon: Icon(
@@ -1170,7 +1144,7 @@ class _ProductosWidgetState extends State<ProductosWidget> {
                                           color: Colors.transparent,
                                           width: 1,
                                         ),
-                                        borderRadius: 5,
+                                        borderRadius: BorderRadius.circular(5),
                                       ),
                                     ),
                                   ],
@@ -1635,20 +1609,19 @@ class _ProductosWidgetState extends State<ProductosWidget> {
                                                     AlignmentDirectional(0, 0),
                                                 child: FFButtonWidget(
                                                   onPressed: () async {
-                                                    await Navigator.push(
-                                                      context,
-                                                      PageTransition(
-                                                        type: PageTransitionType
-                                                            .fade,
-                                                        duration: Duration(
-                                                            milliseconds: 0),
-                                                        reverseDuration:
-                                                            Duration(
-                                                                milliseconds:
-                                                                    0),
-                                                        child:
-                                                            EditarProductoWidget(),
-                                                      ),
+                                                    context.pushNamed(
+                                                      'EditarProducto',
+                                                      extra: <String, dynamic>{
+                                                        kTransitionInfoKey:
+                                                            TransitionInfo(
+                                                          hasTransition: true,
+                                                          transitionType:
+                                                              PageTransitionType
+                                                                  .fade,
+                                                          duration: Duration(
+                                                              milliseconds: 0),
+                                                        ),
+                                                      },
                                                     );
                                                   },
                                                   text: 'Ver detalles',
@@ -1674,7 +1647,9 @@ class _ProductosWidgetState extends State<ProductosWidget> {
                                                       color: Colors.transparent,
                                                       width: 1,
                                                     ),
-                                                    borderRadius: 5,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            5),
                                                   ),
                                                 ),
                                               ),

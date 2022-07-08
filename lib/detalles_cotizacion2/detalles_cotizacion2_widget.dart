@@ -1,19 +1,8 @@
-import '../ajustes/ajustes_widget.dart';
 import '../components/logo_completo_widget.dart';
 import '../components/notifications_widget.dart';
-import '../cotizacione_pendientes/cotizacione_pendientes_widget.dart';
-import '../dashboard/dashboard_widget.dart';
-import '../finanzastodaslascompras/finanzastodaslascompras_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../pedidos/pedidos_widget.dart';
-import '../productos/productos_widget.dart';
-import '../promociones/promociones_widget.dart';
-import '../registro_web/registro_web_widget.dart';
-import '../repartidores_registrados/repartidores_registrados_widget.dart';
-import '../usuarios/usuarios_widget.dart';
-import '../vendedores_registrados/vendedores_registrados_widget.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -107,7 +96,7 @@ class _DetallesCotizacion2WidgetState extends State<DetallesCotizacion2Widget> {
                                 color: Colors.transparent,
                                 width: 1,
                               ),
-                              borderRadius: 5,
+                              borderRadius: BorderRadius.circular(5),
                             ),
                           ),
                         ),
@@ -156,14 +145,15 @@ class _DetallesCotizacion2WidgetState extends State<DetallesCotizacion2Widget> {
                     children: [
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: DashboardWidget(),
-                            ),
+                          context.pushNamed(
+                            'Dashboard',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
                           );
                         },
                         child: ListTile(
@@ -185,14 +175,15 @@ class _DetallesCotizacion2WidgetState extends State<DetallesCotizacion2Widget> {
                       ),
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: PedidosWidget(),
-                            ),
+                          context.pushNamed(
+                            'PEDIDOS',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
                           );
                         },
                         child: ListTile(
@@ -220,14 +211,15 @@ class _DetallesCotizacion2WidgetState extends State<DetallesCotizacion2Widget> {
                         ),
                         child: InkWell(
                           onTap: () async {
-                            await Navigator.push(
-                              context,
-                              PageTransition(
-                                type: PageTransitionType.fade,
-                                duration: Duration(milliseconds: 0),
-                                reverseDuration: Duration(milliseconds: 0),
-                                child: CotizacionePendientesWidget(),
-                              ),
+                            context.pushNamed(
+                              'CotizacionePendientes',
+                              extra: <String, dynamic>{
+                                kTransitionInfoKey: TransitionInfo(
+                                  hasTransition: true,
+                                  transitionType: PageTransitionType.fade,
+                                  duration: Duration(milliseconds: 0),
+                                ),
+                              },
                             );
                           },
                           child: ListTile(
@@ -252,14 +244,15 @@ class _DetallesCotizacion2WidgetState extends State<DetallesCotizacion2Widget> {
                       ),
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: FinanzastodaslascomprasWidget(),
-                            ),
+                          context.pushNamed(
+                            'Finanzastodaslascompras',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
                           );
                         },
                         child: ListTile(
@@ -281,14 +274,15 @@ class _DetallesCotizacion2WidgetState extends State<DetallesCotizacion2Widget> {
                       ),
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: ProductosWidget(),
-                            ),
+                          context.pushNamed(
+                            'Productos',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
                           );
                         },
                         child: ListTile(
@@ -311,14 +305,15 @@ class _DetallesCotizacion2WidgetState extends State<DetallesCotizacion2Widget> {
                       ),
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: VendedoresRegistradosWidget(),
-                            ),
+                          context.pushNamed(
+                            'VendedoresRegistrados',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
                           );
                         },
                         child: ListTile(
@@ -341,14 +336,15 @@ class _DetallesCotizacion2WidgetState extends State<DetallesCotizacion2Widget> {
                       ),
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: RepartidoresRegistradosWidget(),
-                            ),
+                          context.pushNamed(
+                            'RepartidoresRegistrados',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
                           );
                         },
                         child: ListTile(
@@ -371,14 +367,15 @@ class _DetallesCotizacion2WidgetState extends State<DetallesCotizacion2Widget> {
                       ),
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: UsuariosWidget(),
-                            ),
+                          context.pushNamed(
+                            'Usuarios',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
                           );
                         },
                         child: ListTile(
@@ -401,15 +398,7 @@ class _DetallesCotizacion2WidgetState extends State<DetallesCotizacion2Widget> {
                       ),
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: RegistroWebWidget(),
-                            ),
-                          );
+                          context.pushNamed('RegistroWeb');
                         },
                         child: ListTile(
                           leading: Icon(
@@ -431,14 +420,15 @@ class _DetallesCotizacion2WidgetState extends State<DetallesCotizacion2Widget> {
                       ),
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: PromocionesWidget(),
-                            ),
+                          context.pushNamed(
+                            'Promociones',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
                           );
                         },
                         child: ListTile(
@@ -478,14 +468,15 @@ class _DetallesCotizacion2WidgetState extends State<DetallesCotizacion2Widget> {
                       ),
                       InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                              reverseDuration: Duration(milliseconds: 0),
-                              child: AjustesWidget(),
-                            ),
+                          context.pushNamed(
+                            'Ajustes',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
                           );
                         },
                         child: ListTile(
@@ -523,7 +514,7 @@ class _DetallesCotizacion2WidgetState extends State<DetallesCotizacion2Widget> {
                       children: [
                         FFButtonWidget(
                           onPressed: () async {
-                            Navigator.pop(context);
+                            context.pop();
                           },
                           text: 'Volver',
                           icon: Icon(
@@ -546,7 +537,7 @@ class _DetallesCotizacion2WidgetState extends State<DetallesCotizacion2Widget> {
                               color: Colors.transparent,
                               width: 1,
                             ),
-                            borderRadius: 12,
+                            borderRadius: BorderRadius.circular(12),
                           ),
                         ),
                       ],
@@ -625,7 +616,9 @@ class _DetallesCotizacion2WidgetState extends State<DetallesCotizacion2Widget> {
                                                       color: Colors.transparent,
                                                       width: 1,
                                                     ),
-                                                    borderRadius: 5,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            5),
                                                   ),
                                                 ),
                                               ],
@@ -2547,7 +2540,9 @@ class _DetallesCotizacion2WidgetState extends State<DetallesCotizacion2Widget> {
                                                             Colors.transparent,
                                                         width: 1,
                                                       ),
-                                                      borderRadius: 5,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              5),
                                                     ),
                                                   ),
                                                 ),

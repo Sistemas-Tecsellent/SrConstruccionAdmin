@@ -182,7 +182,7 @@ packages:
       name: cloud_firestore_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "5.5.8"
+    version: "5.5.10"
   cloud_firestore_web:
     dependency: "direct main"
     description:
@@ -203,7 +203,7 @@ packages:
       name: cloud_functions_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "5.1.8"
+    version: "5.1.10"
   cloud_functions_web:
     dependency: transitive
     description:
@@ -378,7 +378,7 @@ packages:
       name: firebase_auth_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "6.2.8"
+    version: "6.3.1"
   firebase_auth_web:
     dependency: transitive
     description:
@@ -394,7 +394,7 @@ packages:
     source: hosted
     version: "1.12.0"
   firebase_core_platform_interface:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: firebase_core_platform_interface
       url: "https://pub.dartlang.org"
@@ -420,7 +420,7 @@ packages:
       name: firebase_storage_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.1.8"
+    version: "4.1.10"
   firebase_storage_web:
     dependency: "direct main"
     description:
@@ -464,24 +464,26 @@ packages:
   flutter_facebook_auth:
     dependency: "direct main"
     description:
-      name: flutter_facebook_auth
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "4.3.4+2"
+      path: facebook_auth
+      ref: b65ffb049c9f1e2704adbeb1aa19c61693c946a5
+      resolved-ref: b65ffb049c9f1e2704adbeb1aa19c61693c946a5
+      url: "https://github.com/asmengistu/flutter-facebook-auth"
+    source: git
+    version: "4.0.0"
   flutter_facebook_auth_platform_interface:
     dependency: transitive
     description:
       name: flutter_facebook_auth_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.1.2"
+    version: "3.2.0"
   flutter_facebook_auth_web:
     dependency: transitive
     description:
       name: flutter_facebook_auth_web
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.1.2"
+    version: "3.2.0"
   flutter_launcher_icons:
     dependency: "direct dev"
     description:
@@ -546,6 +548,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
+  go_router:
+    dependency: "direct main"
+    description:
+      name: go_router
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.1.0"
   google_fonts:
     dependency: "direct main"
     description:
@@ -1018,10 +1027,12 @@ packages:
   sign_in_with_apple:
     dependency: "direct main"
     description:
-      name: sign_in_with_apple
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "4.0.0"
+      path: "packages/sign_in_with_apple/sign_in_with_apple"
+      ref: ab18d53a80e0a4bb90f1ad84f37f1b408930f28d
+      resolved-ref: ab18d53a80e0a4bb90f1ad84f37f1b408930f28d
+      url: "https://github.com/asmengistu/dart_packages"
+    source: git
+    version: "3.3.0"
   sign_in_with_apple_platform_interface:
     dependency: transitive
     description:

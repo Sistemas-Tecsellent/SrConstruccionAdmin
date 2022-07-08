@@ -1,4 +1,3 @@
-import '../ajustes/ajustes_widget.dart';
 import '../auth/auth_util.dart';
 import '../backend/api_requests/api_calls.dart';
 import '../backend/backend.dart';
@@ -6,21 +5,11 @@ import '../backend/firebase_storage/storage.dart';
 import '../components/logo_completo_widget.dart';
 import '../components/notifications_widget.dart';
 import '../components/ver_productos_widget.dart';
-import '../cotizacione_pendientes/cotizacione_pendientes_widget.dart';
-import '../dashboard/dashboard_widget.dart';
-import '../finanzastodaslascompras/finanzastodaslascompras_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_toggle_icon.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../flutter_flow/upload_media.dart';
-import '../pedidos/pedidos_widget.dart';
-import '../productos/productos_widget.dart';
-import '../promociones/promociones_widget.dart';
-import '../registro_web/registro_web_widget.dart';
-import '../repartidores_registrados/repartidores_registrados_widget.dart';
-import '../usuarios/usuarios_widget.dart';
-import '../vendedores_registrados/vendedores_registrados_widget.dart';
 import '../custom_code/actions/index.dart' as actions;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
@@ -140,7 +129,7 @@ class _PedidoPorAceptar5DIASWidgetState
                                     color: Colors.transparent,
                                     width: 1,
                                   ),
-                                  borderRadius: 5,
+                                  borderRadius: BorderRadius.circular(5),
                                 ),
                               ),
                             ),
@@ -182,7 +171,7 @@ class _PedidoPorAceptar5DIASWidgetState
                                       color: Colors.transparent,
                                       width: 1,
                                     ),
-                                    borderRadius: 5,
+                                    borderRadius: BorderRadius.circular(5),
                                   ),
                                 ),
                               ),
@@ -210,7 +199,6 @@ class _PedidoPorAceptar5DIASWidgetState
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    width: MediaQuery.of(context).size.width * 0.18,
                     decoration: BoxDecoration(),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -237,15 +225,15 @@ class _PedidoPorAceptar5DIASWidgetState
                             children: [
                               InkWell(
                                 onTap: () async {
-                                  await Navigator.push(
-                                    context,
-                                    PageTransition(
-                                      type: PageTransitionType.fade,
-                                      duration: Duration(milliseconds: 0),
-                                      reverseDuration:
-                                          Duration(milliseconds: 0),
-                                      child: DashboardWidget(),
-                                    ),
+                                  context.pushNamed(
+                                    'Dashboard',
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                      ),
+                                    },
                                   );
                                 },
                                 child: ListTile(
@@ -275,15 +263,16 @@ class _PedidoPorAceptar5DIASWidgetState
                                 ),
                                 child: InkWell(
                                   onTap: () async {
-                                    await Navigator.push(
-                                      context,
-                                      PageTransition(
-                                        type: PageTransitionType.fade,
-                                        duration: Duration(milliseconds: 0),
-                                        reverseDuration:
-                                            Duration(milliseconds: 0),
-                                        child: PedidosWidget(),
-                                      ),
+                                    context.pushNamed(
+                                      'PEDIDOS',
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.fade,
+                                          duration: Duration(milliseconds: 0),
+                                        ),
+                                      },
                                     );
                                   },
                                   child: ListTile(
@@ -310,16 +299,7 @@ class _PedidoPorAceptar5DIASWidgetState
                               ),
                               InkWell(
                                 onTap: () async {
-                                  await Navigator.push(
-                                    context,
-                                    PageTransition(
-                                      type: PageTransitionType.fade,
-                                      duration: Duration(milliseconds: 0),
-                                      reverseDuration:
-                                          Duration(milliseconds: 0),
-                                      child: CotizacionePendientesWidget(),
-                                    ),
-                                  );
+                                  context.pushNamed('CotizacionePendientes');
                                 },
                                 child: ListTile(
                                   leading: Icon(
@@ -343,15 +323,15 @@ class _PedidoPorAceptar5DIASWidgetState
                               ),
                               InkWell(
                                 onTap: () async {
-                                  await Navigator.push(
-                                    context,
-                                    PageTransition(
-                                      type: PageTransitionType.fade,
-                                      duration: Duration(milliseconds: 0),
-                                      reverseDuration:
-                                          Duration(milliseconds: 0),
-                                      child: FinanzastodaslascomprasWidget(),
-                                    ),
+                                  context.pushNamed(
+                                    'Finanzastodaslascompras',
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                      ),
+                                    },
                                   );
                                 },
                                 child: ListTile(
@@ -375,15 +355,15 @@ class _PedidoPorAceptar5DIASWidgetState
                               ),
                               InkWell(
                                 onTap: () async {
-                                  await Navigator.push(
-                                    context,
-                                    PageTransition(
-                                      type: PageTransitionType.fade,
-                                      duration: Duration(milliseconds: 0),
-                                      reverseDuration:
-                                          Duration(milliseconds: 0),
-                                      child: ProductosWidget(),
-                                    ),
+                                  context.pushNamed(
+                                    'Productos',
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                      ),
+                                    },
                                   );
                                 },
                                 child: ListTile(
@@ -408,15 +388,15 @@ class _PedidoPorAceptar5DIASWidgetState
                               ),
                               InkWell(
                                 onTap: () async {
-                                  await Navigator.push(
-                                    context,
-                                    PageTransition(
-                                      type: PageTransitionType.fade,
-                                      duration: Duration(milliseconds: 0),
-                                      reverseDuration:
-                                          Duration(milliseconds: 0),
-                                      child: VendedoresRegistradosWidget(),
-                                    ),
+                                  context.pushNamed(
+                                    'VendedoresRegistrados',
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                      ),
+                                    },
                                   );
                                 },
                                 child: ListTile(
@@ -441,16 +421,7 @@ class _PedidoPorAceptar5DIASWidgetState
                               ),
                               InkWell(
                                 onTap: () async {
-                                  await Navigator.push(
-                                    context,
-                                    PageTransition(
-                                      type: PageTransitionType.fade,
-                                      duration: Duration(milliseconds: 0),
-                                      reverseDuration:
-                                          Duration(milliseconds: 0),
-                                      child: RepartidoresRegistradosWidget(),
-                                    ),
-                                  );
+                                  context.pushNamed('RepartidoresRegistrados');
                                 },
                                 child: ListTile(
                                   leading: Icon(
@@ -474,15 +445,15 @@ class _PedidoPorAceptar5DIASWidgetState
                               ),
                               InkWell(
                                 onTap: () async {
-                                  await Navigator.push(
-                                    context,
-                                    PageTransition(
-                                      type: PageTransitionType.fade,
-                                      duration: Duration(milliseconds: 0),
-                                      reverseDuration:
-                                          Duration(milliseconds: 0),
-                                      child: UsuariosWidget(),
-                                    ),
+                                  context.pushNamed(
+                                    'Usuarios',
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                      ),
+                                    },
                                   );
                                 },
                                 child: ListTile(
@@ -507,16 +478,7 @@ class _PedidoPorAceptar5DIASWidgetState
                               ),
                               InkWell(
                                 onTap: () async {
-                                  await Navigator.push(
-                                    context,
-                                    PageTransition(
-                                      type: PageTransitionType.fade,
-                                      duration: Duration(milliseconds: 0),
-                                      reverseDuration:
-                                          Duration(milliseconds: 0),
-                                      child: RegistroWebWidget(),
-                                    ),
-                                  );
+                                  context.pushNamed('RegistroWeb');
                                 },
                                 child: ListTile(
                                   leading: Icon(
@@ -540,15 +502,15 @@ class _PedidoPorAceptar5DIASWidgetState
                               ),
                               InkWell(
                                 onTap: () async {
-                                  await Navigator.push(
-                                    context,
-                                    PageTransition(
-                                      type: PageTransitionType.fade,
-                                      duration: Duration(milliseconds: 0),
-                                      reverseDuration:
-                                          Duration(milliseconds: 0),
-                                      child: PromocionesWidget(),
-                                    ),
+                                  context.pushNamed(
+                                    'Promociones',
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                      ),
+                                    },
                                   );
                                 },
                                 child: ListTile(
@@ -592,15 +554,15 @@ class _PedidoPorAceptar5DIASWidgetState
                               ),
                               InkWell(
                                 onTap: () async {
-                                  await Navigator.push(
-                                    context,
-                                    PageTransition(
-                                      type: PageTransitionType.fade,
-                                      duration: Duration(milliseconds: 0),
-                                      reverseDuration:
-                                          Duration(milliseconds: 0),
-                                      child: AjustesWidget(),
-                                    ),
+                                  context.pushNamed(
+                                    'Ajustes',
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                      ),
+                                    },
                                   );
                                 },
                                 child: ListTile(
@@ -672,14 +634,14 @@ class _PedidoPorAceptar5DIASWidgetState
                                       0, 0, 0, 10),
                                   child: InkWell(
                                     onTap: () async {
-                                      Navigator.pop(context);
+                                      context.pop();
                                     },
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         FFButtonWidget(
                                           onPressed: () async {
-                                            Navigator.pop(context);
+                                            context.pop();
                                           },
                                           text: 'Volver',
                                           icon: Icon(
@@ -705,7 +667,8 @@ class _PedidoPorAceptar5DIASWidgetState
                                               color: Colors.transparent,
                                               width: 1,
                                             ),
-                                            borderRadius: 12,
+                                            borderRadius:
+                                                BorderRadius.circular(12),
                                           ),
                                         ),
                                       ],
@@ -920,6 +883,9 @@ class _PedidoPorAceptar5DIASWidgetState
                                                                 mainAxisAlignment:
                                                                     MainAxisAlignment
                                                                         .spaceBetween,
+                                                                crossAxisAlignment:
+                                                                    CrossAxisAlignment
+                                                                        .start,
                                                                 children: [
                                                                   Column(
                                                                     mainAxisSize:
@@ -979,73 +945,89 @@ class _PedidoPorAceptar5DIASWidgetState
                                                                         CrossAxisAlignment
                                                                             .start,
                                                                     children: [
-                                                                      Container(
-                                                                        width:
-                                                                            200,
-                                                                        decoration:
-                                                                            BoxDecoration(),
+                                                                      Material(
+                                                                        color: Colors
+                                                                            .transparent,
+                                                                        elevation:
+                                                                            0,
+                                                                        shape:
+                                                                            RoundedRectangleBorder(
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(10),
+                                                                        ),
                                                                         child:
-                                                                            TextFormField(
-                                                                          controller: textController1 ??=
-                                                                              TextEditingController(
-                                                                            text:
-                                                                                pedidoPorAceptar5DIASOrdersForClientsRecord.deliverDate,
-                                                                          ),
-                                                                          onChanged: (_) =>
-                                                                              EasyDebounce.debounce(
-                                                                            'textController1',
-                                                                            Duration(milliseconds: 2000),
-                                                                            () =>
-                                                                                setState(() {}),
-                                                                          ),
-                                                                          autofocus:
-                                                                              true,
-                                                                          obscureText:
-                                                                              false,
+                                                                            Container(
+                                                                          width:
+                                                                              200,
                                                                           decoration:
-                                                                              InputDecoration(
-                                                                            labelText:
-                                                                                'ENTREGA ESTIMADA',
-                                                                            labelStyle: FlutterFlowTheme.of(context).bodyText1.override(
-                                                                                  fontFamily: 'Montserrat',
-                                                                                  color: Color(0xFF909090),
-                                                                                  fontWeight: FontWeight.w500,
-                                                                                ),
-                                                                            hintStyle: FlutterFlowTheme.of(context).bodyText1.override(
-                                                                                  fontFamily: 'Montserrat',
-                                                                                  color: Color(0xFF909090),
-                                                                                  fontWeight: FontWeight.w500,
-                                                                                ),
-                                                                            enabledBorder:
-                                                                                UnderlineInputBorder(
-                                                                              borderSide: BorderSide(
-                                                                                color: Color(0x00000000),
-                                                                                width: 1,
-                                                                              ),
-                                                                              borderRadius: const BorderRadius.only(
-                                                                                topLeft: Radius.circular(4.0),
-                                                                                topRight: Radius.circular(4.0),
-                                                                              ),
-                                                                            ),
-                                                                            focusedBorder:
-                                                                                UnderlineInputBorder(
-                                                                              borderSide: BorderSide(
-                                                                                color: Color(0x00000000),
-                                                                                width: 1,
-                                                                              ),
-                                                                              borderRadius: const BorderRadius.only(
-                                                                                topLeft: Radius.circular(4.0),
-                                                                                topRight: Radius.circular(4.0),
-                                                                              ),
+                                                                              BoxDecoration(
+                                                                            borderRadius:
+                                                                                BorderRadius.circular(10),
+                                                                            border:
+                                                                                Border.all(
+                                                                              color: FlutterFlowTheme.of(context).lineColor,
+                                                                              width: 1,
                                                                             ),
                                                                           ),
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyText1
-                                                                              .override(
-                                                                                fontFamily: 'Montserrat',
-                                                                                color: Color(0xFF909090),
-                                                                                fontWeight: FontWeight.w500,
+                                                                          child:
+                                                                              Padding(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                5,
+                                                                                0,
+                                                                                0,
+                                                                                0),
+                                                                            child:
+                                                                                TextFormField(
+                                                                              controller: textController1 ??= TextEditingController(
+                                                                                text: pedidoPorAceptar5DIASOrdersForClientsRecord.deliverDate,
                                                                               ),
+                                                                              onChanged: (_) => EasyDebounce.debounce(
+                                                                                'textController1',
+                                                                                Duration(milliseconds: 2000),
+                                                                                () => setState(() {}),
+                                                                              ),
+                                                                              autofocus: true,
+                                                                              obscureText: false,
+                                                                              decoration: InputDecoration(
+                                                                                labelText: 'ENTREGA ESTIMADA',
+                                                                                labelStyle: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                      fontFamily: 'Montserrat',
+                                                                                      color: Color(0xFF909090),
+                                                                                      fontWeight: FontWeight.w500,
+                                                                                    ),
+                                                                                hintStyle: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                      fontFamily: 'Montserrat',
+                                                                                      color: Color(0xFF909090),
+                                                                                      fontWeight: FontWeight.w500,
+                                                                                    ),
+                                                                                enabledBorder: UnderlineInputBorder(
+                                                                                  borderSide: BorderSide(
+                                                                                    color: Color(0x00000000),
+                                                                                    width: 1,
+                                                                                  ),
+                                                                                  borderRadius: const BorderRadius.only(
+                                                                                    topLeft: Radius.circular(4.0),
+                                                                                    topRight: Radius.circular(4.0),
+                                                                                  ),
+                                                                                ),
+                                                                                focusedBorder: UnderlineInputBorder(
+                                                                                  borderSide: BorderSide(
+                                                                                    color: Color(0x00000000),
+                                                                                    width: 1,
+                                                                                  ),
+                                                                                  borderRadius: const BorderRadius.only(
+                                                                                    topLeft: Radius.circular(4.0),
+                                                                                    topRight: Radius.circular(4.0),
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                              style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                    fontFamily: 'Montserrat',
+                                                                                    color: Color(0xFF909090),
+                                                                                    fontWeight: FontWeight.w500,
+                                                                                  ),
+                                                                            ),
+                                                                          ),
                                                                         ),
                                                                       ),
                                                                     ],
@@ -1147,7 +1129,7 @@ class _PedidoPorAceptar5DIASWidgetState
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 0,
-                                                                                0,
+                                                                                20,
                                                                                 0,
                                                                                 5),
                                                                             child:
@@ -1476,7 +1458,7 @@ class _PedidoPorAceptar5DIASWidgetState
                                                                                                 ToggleIcon(
                                                                                                   onPressed: () async {
                                                                                                     final ordersForStoresUpdateData = createOrdersForStoresRecordData(
-                                                                                                      isSentBySeller: columnOrdersForStoresRecord.isSentBySeller,
+                                                                                                      isSentBySeller: !columnOrdersForStoresRecord.isSentBySeller,
                                                                                                     );
                                                                                                     await columnOrdersForStoresRecord.reference.update(ordersForStoresUpdateData);
                                                                                                   },
@@ -1507,7 +1489,7 @@ class _PedidoPorAceptar5DIASWidgetState
                                                                                                 ToggleIcon(
                                                                                                   onPressed: () async {
                                                                                                     final ordersForStoresUpdateData = createOrdersForStoresRecordData(
-                                                                                                      isCollectedByAdmin: columnOrdersForStoresRecord.isCollectedByAdmin,
+                                                                                                      isCollectedByAdmin: !columnOrdersForStoresRecord.isCollectedByAdmin,
                                                                                                     );
                                                                                                     await columnOrdersForStoresRecord.reference.update(ordersForStoresUpdateData);
                                                                                                   },
@@ -1543,6 +1525,46 @@ class _PedidoPorAceptar5DIASWidgetState
                                                                     ),
                                                                   ],
                                                                 ),
+                                                              ),
+                                                            ),
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          20,
+                                                                          30,
+                                                                          0,
+                                                                          0),
+                                                              child: Row(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0,
+                                                                            0,
+                                                                            0,
+                                                                            5),
+                                                                    child: Text(
+                                                                      'ESPECIFICA EL MÉTODO DE ENVÍO PARA EL CLIENTE',
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyText1
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Montserrat',
+                                                                            color:
+                                                                                Color(0xFF909090),
+                                                                            fontSize:
+                                                                                14,
+                                                                            fontWeight:
+                                                                                FontWeight.w500,
+                                                                          ),
+                                                                    ),
+                                                                  ),
+                                                                ],
                                                               ),
                                                             ),
                                                             Padding(
@@ -1692,7 +1714,7 @@ class _PedidoPorAceptar5DIASWidgetState
                                                                                 color: Colors.transparent,
                                                                                 width: 1,
                                                                               ),
-                                                                              borderRadius: 5,
+                                                                              borderRadius: BorderRadius.circular(5),
                                                                             ),
                                                                           ),
                                                                         ),
@@ -1899,7 +1921,7 @@ class _PedidoPorAceptar5DIASWidgetState
                                                                                         color: Colors.transparent,
                                                                                         width: 1,
                                                                                       ),
-                                                                                      borderRadius: 5,
+                                                                                      borderRadius: BorderRadius.circular(5),
                                                                                     ),
                                                                                   ),
                                                                                 ),
@@ -2073,7 +2095,8 @@ class _PedidoPorAceptar5DIASWidgetState
                                                                             1,
                                                                       ),
                                                                       borderRadius:
-                                                                          5,
+                                                                          BorderRadius.circular(
+                                                                              5),
                                                                     ),
                                                                   ),
                                                                 ],
@@ -2231,7 +2254,7 @@ class _PedidoPorAceptar5DIASWidgetState
                                                                                       color: Colors.transparent,
                                                                                       width: 1,
                                                                                     ),
-                                                                                    borderRadius: 5,
+                                                                                    borderRadius: BorderRadius.circular(5),
                                                                                   ),
                                                                                 ),
                                                                                 Padding(

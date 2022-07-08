@@ -301,7 +301,7 @@ class _VerFacturaWidgetState extends State<VerFacturaWidget> {
                             color: Colors.transparent,
                             width: 1,
                           ),
-                          borderRadius: 5,
+                          borderRadius: BorderRadius.circular(5),
                         ),
                       ),
                       FFButtonWidget(
@@ -324,7 +324,7 @@ class _VerFacturaWidgetState extends State<VerFacturaWidget> {
                             color: Colors.transparent,
                             width: 1,
                           ),
-                          borderRadius: 5,
+                          borderRadius: BorderRadius.circular(5),
                         ),
                       ),
                     ],

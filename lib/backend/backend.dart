@@ -15,6 +15,8 @@ import 'schema/delivery_orders_record.dart';
 import 'schema/admins_record.dart';
 import 'schema/users_record.dart';
 import 'schema/sellers_record.dart';
+import 'schema/pricing_requests_record.dart';
+import 'schema/admin_pricing_requests_for_stores_record.dart';
 import 'schema/serializers.dart';
 
 export 'dart:async' show StreamSubscription;
@@ -33,6 +35,8 @@ export 'schema/delivery_orders_record.dart';
 export 'schema/admins_record.dart';
 export 'schema/users_record.dart';
 export 'schema/sellers_record.dart';
+export 'schema/pricing_requests_record.dart';
+export 'schema/admin_pricing_requests_for_stores_record.dart';
 
 /// Functions to query OrderBundlesRecords (as a Stream and as a Future).
 Stream<List<OrderBundlesRecord>> queryOrderBundlesRecord({
@@ -499,6 +503,93 @@ Future<FFFirestorePage<SellersRecord>> querySellersRecordPage({
       pageSize: pageSize,
       isStream: isStream,
     );
+
+/// Functions to query PricingRequestsRecords (as a Stream and as a Future).
+Stream<List<PricingRequestsRecord>> queryPricingRequestsRecord({
+  Query Function(Query) queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      PricingRequestsRecord.collection,
+      PricingRequestsRecord.serializer,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<PricingRequestsRecord>> queryPricingRequestsRecordOnce({
+  Query Function(Query) queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      PricingRequestsRecord.collection,
+      PricingRequestsRecord.serializer,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<FFFirestorePage<PricingRequestsRecord>> queryPricingRequestsRecordPage({
+  Query Function(Query) queryBuilder,
+  DocumentSnapshot nextPageMarker,
+  int pageSize,
+  bool isStream,
+}) =>
+    queryCollectionPage(
+      PricingRequestsRecord.collection,
+      PricingRequestsRecord.serializer,
+      queryBuilder: queryBuilder,
+      nextPageMarker: nextPageMarker,
+      pageSize: pageSize,
+      isStream: isStream,
+    );
+
+/// Functions to query AdminPricingRequestsForStoresRecords (as a Stream and as a Future).
+Stream<List<AdminPricingRequestsForStoresRecord>>
+    queryAdminPricingRequestsForStoresRecord({
+  Query Function(Query) queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+        queryCollection(
+          AdminPricingRequestsForStoresRecord.collection,
+          AdminPricingRequestsForStoresRecord.serializer,
+          queryBuilder: queryBuilder,
+          limit: limit,
+          singleRecord: singleRecord,
+        );
+
+Future<List<AdminPricingRequestsForStoresRecord>>
+    queryAdminPricingRequestsForStoresRecordOnce({
+  Query Function(Query) queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+        queryCollectionOnce(
+          AdminPricingRequestsForStoresRecord.collection,
+          AdminPricingRequestsForStoresRecord.serializer,
+          queryBuilder: queryBuilder,
+          limit: limit,
+          singleRecord: singleRecord,
+        );
+
+Future<FFFirestorePage<AdminPricingRequestsForStoresRecord>>
+    queryAdminPricingRequestsForStoresRecordPage({
+  Query Function(Query) queryBuilder,
+  DocumentSnapshot nextPageMarker,
+  int pageSize,
+  bool isStream,
+}) =>
+        queryCollectionPage(
+          AdminPricingRequestsForStoresRecord.collection,
+          AdminPricingRequestsForStoresRecord.serializer,
+          queryBuilder: queryBuilder,
+          nextPageMarker: nextPageMarker,
+          pageSize: pageSize,
+          isStream: isStream,
+        );
 
 Stream<List<T>> queryCollection<T>(Query collection, Serializer<T> serializer,
     {Query Function(Query) queryBuilder,
