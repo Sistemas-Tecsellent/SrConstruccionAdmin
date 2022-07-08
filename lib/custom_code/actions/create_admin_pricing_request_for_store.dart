@@ -15,7 +15,7 @@ Future createAdminPricingRequestForStore(
 ) async {
   HttpsCallable createAdminPricingRequestForStore = FirebaseFunctions.instance
       .httpsCallable('createAdminPricingRequestForStore');
-  await createAdminPricingRequestForStore.call(<String, dynamic>{
+  var res = await createAdminPricingRequestForStore.call(<String, dynamic>{
     'storeId': storeId,
     'products': products,
     'pricingRequestId': pricingRequestId,
